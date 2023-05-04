@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7376256212545494001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.62, y: 4.8, z: 0}
-  m_LocalScale: {x: 1, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.02, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   targetRoom: {fileID: 0}
   currentRoom: {fileID: 0}
   entrance: {fileID: 0}
-  player: {fileID: 1327647173130217831, guid: 760f7a8d401eb435c9520ec1eade0224, type: 3}
+  player: {fileID: 0}
 --- !u!61 &6660049341704803720
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,7 +6,11 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private GameObject targetRoom;
     [SerializeField] private GameObject currentRoom;
     [SerializeField] private GameObject entrance;
-    [SerializeField] private GameObject player;
+    private GameObject player;
+
+    private void Start() {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")){
