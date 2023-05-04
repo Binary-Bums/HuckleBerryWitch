@@ -1,19 +1,23 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+
     [SerializeField] private GameObject targetRoom;
     [SerializeField] private GameObject currentRoom;
     [SerializeField] private GameObject entrance;
-    private GameObject player;
 
-    private void Start() {
-        player = GameObject.FindGameObjectWithTag("Player");
+    private Transform entranceTransform;
+    private Transform playerTransform;
+
+    private void Start()
+    {
+        entranceTransform = entrance.transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")){
+        if (other.CompareTag("Player")) {
             SwitchRoom();
         }
     }
@@ -22,6 +26,7 @@ public class RoomManager : MonoBehaviour
     {
         currentRoom.SetActive(false);
         targetRoom.SetActive(true);
-        player.transform.position = entrance.transform.position;
+         
+        playerTransform.position = entranceTransform.position;
     }
 }
