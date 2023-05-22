@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerInfo : MonoBehaviour
+{
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private HealthBar healthBar;
+    private float currentHealth;  // player's health
+
+
+    private void Start() {
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth/maxHealth);
+        print(currentHealth);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth/maxHealth);
+        print(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+}

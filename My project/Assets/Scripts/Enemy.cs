@@ -19,7 +19,8 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     public float speed;
     private float distance;
-    public float health = 1;
+    public float health;
+    public float damage;
     System.Random rand = new System.Random();
 
 
@@ -34,6 +35,18 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        print("hit");
+        // check if the enemy collided with the player
+        if (other.gameObject.CompareTag("playerBody"))
+        {
+            // get the player's script component and call TakeDamage
+            PlayerInfo playerScript = player.gameObject.GetComponent<PlayerInfo>();
+            playerScript.TakeDamage(damage);
+        }
     }
 
     // Update is called once per frame

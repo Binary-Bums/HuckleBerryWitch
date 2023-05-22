@@ -23,6 +23,7 @@ public class BeeSpawner : MonoBehaviour
         {
             timer = 0;
             Instantiate(bee, transform.position, Quaternion.identity);
+
         }
     }
 }

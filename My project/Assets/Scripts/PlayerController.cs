@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        movementFilter.SetLayerMask(~LayerMask.GetMask("Combat"));
     }
 //collision detection
     private void FixedUpdate()  {
