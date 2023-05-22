@@ -12,14 +12,12 @@ public class PlayerInfo : MonoBehaviour
     private void Start() {
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth/maxHealth);
-        print(currentHealth);
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth/maxHealth);
-        print(currentHealth);
 
         if (currentHealth <= 0)
         {

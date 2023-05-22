@@ -37,9 +37,8 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-     void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        print("hit");
         // check if the enemy collided with the player
         if (other.gameObject.CompareTag("playerBody"))
         {
