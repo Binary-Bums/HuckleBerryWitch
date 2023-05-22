@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public GameObject player;
+    private GameObject player;
     public float speed;
     private float distance;
     public float health = 1;
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
