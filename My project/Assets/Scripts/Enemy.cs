@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
             // get the player's script component and call TakeDamage
             PlayerInfo playerScript = player.gameObject.GetComponent<PlayerInfo>();
             playerScript.TakeDamage(damage);
+            Defeated();
         }
     }
 
@@ -65,7 +66,6 @@ public class Enemy : MonoBehaviour
 
 
          }else{
-            int rint = 100;
              float temp1 = (rand.Next(1200000)-600000)%(500000);
              float temp2 = (rand.Next(1200000)-600000)%(500000);
              if(temp1 < 2 || temp2 < 2){

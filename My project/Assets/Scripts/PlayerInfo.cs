@@ -9,7 +9,8 @@ public class PlayerInfo : MonoBehaviour
     private float currentHealth;  // player's health
 
 
-    private void Start() {
+    private void Start()
+    {
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth/maxHealth);
     }
@@ -23,5 +24,15 @@ public class PlayerInfo : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void Heal(float heal)
+    {
+        if (heal + currentHealth < maxHealth)
+            currentHealth += heal;
+        else 
+            currentHealth = maxHealth;
+
+        healthBar.SetHealth(currentHealth/maxHealth);
     }
 }
