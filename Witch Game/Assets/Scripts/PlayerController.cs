@@ -12,12 +12,16 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movementInput;
     Rigidbody2D rb;
+    private Animator animator;
+
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
     }
 //collision detection
     private void FixedUpdate()  {
@@ -54,6 +58,40 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue)   {
         movementInput = movementValue.Get<Vector2>();
+        animator.SetFloat("X",movementInput.x);
+        animator.SetFloat("Y",movementInput.y);
+        animator.SetFloat("Speed", movementInput.sqrMagnitude);
     }
 }
 //We're live!
+
+/*using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+
+    public Rigidbody2D rb;
+
+    Vector2 movement;
+
+    //update is called once per frame
+    void Update()
+    {
+        // input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+    
+    }
+
+    void FixedUpdate()
+    {
+        //movement
+        rb.MovePosition(rb.position + movement*moveSpeed*Time.fixedDeltaTime);
+
+
+    }
+}
+*/
