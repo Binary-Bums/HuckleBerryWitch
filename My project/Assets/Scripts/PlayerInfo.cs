@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
+    private enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+
+    private Direction direction = Direction.Down;
+
+
+
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private HealthBar healthBar;
     private float currentHealth;  // player's health
@@ -13,6 +25,24 @@ public class PlayerInfo : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth/maxHealth);
+    }
+    private void Update() {
+        if (Input.GetKey(KeyCode.W))
+        {
+            direction = Direction.Up;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            direction = Direction.Down;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            direction = Direction.Left;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction = Direction.Right;
+        }
     }
 
     public void TakeDamage(float damage)
