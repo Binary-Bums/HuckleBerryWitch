@@ -30,7 +30,6 @@ public class Spell1Physics : MonoBehaviour
         {
             move = new Vector2(speed, 0);
         }
-        Debug.Log(move);
     }
 
     // Update is called once per frame
