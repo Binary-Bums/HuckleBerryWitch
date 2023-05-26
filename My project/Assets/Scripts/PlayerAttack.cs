@@ -16,7 +16,8 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            Instantiate(spell1, transform.position, Quaternion.identity);
+            GameObject spell = Instantiate(spell1, transform.position, Quaternion.identity);
+            spell.GetComponent<Spell1Physics>().Spawn();
         }
     }
 }
