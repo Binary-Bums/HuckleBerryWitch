@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    private enum Direction
+    public enum Direction
     {
         Up,
         Down,
@@ -12,9 +12,7 @@ public class PlayerInfo : MonoBehaviour
         Right
     }
 
-    private Direction direction = Direction.Down;
-
-
+    public Direction direction = Direction.Down;
 
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private HealthBar healthBar;

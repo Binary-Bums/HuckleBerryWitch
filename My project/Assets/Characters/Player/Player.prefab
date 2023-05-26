@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7861929920430791281}
   - component: {fileID: 7658369952618658387}
   - component: {fileID: 5150419210647242853}
+  - component: {fileID: 8775127115081028905}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -257,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fdc11cdf1863c4a89e7ec4f7aedfec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 1
   maxHealth: 100
   healthBar: {fileID: 0}
 --- !u!114 &5150419210647242853
@@ -289,3 +291,16 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8775127115081028905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861929920430791274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008e02cd66f354cf283d7d47907349ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spell1: {fileID: 3792548723878627894, guid: f9c1e8b06bfd34458b4135708b39dfee, type: 3}
