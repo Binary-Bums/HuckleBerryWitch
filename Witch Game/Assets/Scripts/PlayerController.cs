@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        movementFilter.SetLayerMask(~LayerMask.GetMask("Combat"));
     }
 //collision detection
     private void FixedUpdate()  {
@@ -64,34 +65,3 @@ public class PlayerController : MonoBehaviour
     }
 }
 //We're live!
-
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour
-{
-    public float moveSpeed = 5f;
-
-    public Rigidbody2D rb;
-
-    Vector2 movement;
-
-    //update is called once per frame
-    void Update()
-    {
-        // input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-    
-    }
-
-    void FixedUpdate()
-    {
-        //movement
-        rb.MovePosition(rb.position + movement*moveSpeed*Time.fixedDeltaTime);
-
-
-    }
-}
-*/

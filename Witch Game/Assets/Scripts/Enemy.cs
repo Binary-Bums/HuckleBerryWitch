@@ -16,10 +16,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public GameObject player;
+    private GameObject player;
     public float speed;
     private float distance;
-    public float health = 1;
+    public float health;
+    public float damage;
     System.Random rand = new System.Random();
 
 
@@ -33,7 +34,19 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // check if the enemy collided with the player
+        if (other.gameObject.CompareTag("playerBody"))
+        {
+            // get the player's script component and call TakeDamage
+            PlayerInfo playerScript = player.gameObject.GetComponent<PlayerInfo>();
+            playerScript.TakeDamage(damage);
+            Defeated();
+        }
     }
 
     // Update is called once per frame
@@ -53,7 +66,6 @@ public class Enemy : MonoBehaviour
 
 
          }else{
-            int rint = 100;
              float temp1 = (rand.Next(1200000)-600000)%(500000);
              float temp2 = (rand.Next(1200000)-600000)%(500000);
              if(temp1 < 2 || temp2 < 2){
