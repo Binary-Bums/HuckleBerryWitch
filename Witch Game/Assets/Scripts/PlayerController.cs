@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
-    public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
 
     Vector2 movementInput;
@@ -46,7 +45,7 @@ public class PlayerController : MonoBehaviour
             direction, //X and Y values between -1 and 1 that represent the direction from the body to look for collisions
             movementFilter, // The settings that determine where a collision can occur on such as layers to collie with
             castCollisions, // List of collisions to store the found collisions into after Cast is finished
-            moveSpeed * Time.fixedDeltaTime + collisionOffset); // The amount to cast equal to the movemet plus an offset
+            moveSpeed * Time.fixedDeltaTime); // The amount to cast equal to the movemet plus an offset
 
         if(count == 0){
             rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);

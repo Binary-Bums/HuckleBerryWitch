@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bee: {fileID: 3319192754838453733, guid: e6b7aa616db7a194f9432d1d75a9c831, type: 3}
-  spawnDistance: 10
+  spawnDistance: 2
   spawnCooldown: 2
