@@ -12,12 +12,16 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movementInput;
     Rigidbody2D rb;
+    private Animator animator;
+
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
         movementFilter.SetLayerMask(~LayerMask.GetMask("Combat"));
     }
 //collision detection
@@ -55,6 +59,9 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue)   {
         movementInput = movementValue.Get<Vector2>();
+        animator.SetFloat("X",movementInput.x);
+        animator.SetFloat("Y",movementInput.y);
+        animator.SetFloat("Speed", movementInput.sqrMagnitude);
     }
 }
 //We're live!
