@@ -32,15 +32,15 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject == chestObj)
-    //     {
-    //         // Stop the player's movement
-    //         Rigidbody2D playerRigidbody = GetComponent<Rigidbody2D>();
-    //         playerRigidbody.velocity = Vector2.zero;
-    //     }
-    // }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject == chestObj)
+        {
+            // Stop the player's movement
+            Rigidbody2D playerRigidbody = GetComponent<Rigidbody2D>();
+            playerRigidbody.velocity = Vector2.zero;
+        }
+    }
 
     private void Update()
     {
