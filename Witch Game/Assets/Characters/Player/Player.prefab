@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2945564229793816500}
   - component: {fileID: 7014088077933691839}
   - component: {fileID: 2883370966140506875}
+  - component: {fileID: 422087205689602702}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -386,3 +387,15 @@ MonoBehaviour:
   chestObj: {fileID: 0}
   interactionRange: 3
   chestToggleScript: {fileID: 0}
+--- !u!114 &422087205689602702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327647173130217831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57e6cf500603be42a245f94c9a3174b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
