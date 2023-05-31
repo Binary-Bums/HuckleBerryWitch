@@ -297,6 +297,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell1: {fileID: 3792548723878627894, guid: f9c1e8b06bfd34458b4135708b39dfee, type: 3}
+  damageAmount: 30
+  attackRadius: 1
+  attackCooldown: 1
+  canAttack: 1
 --- !u!114 &2945564229793816500
 MonoBehaviour:
   m_ObjectHideFlags: 0
