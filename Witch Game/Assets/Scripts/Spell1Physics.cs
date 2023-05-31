@@ -8,6 +8,8 @@ public class Spell1Physics : MonoBehaviour
     private GameObject player;
     private Vector2 move = new Vector2(0, 0);
     public float speed = .01f;
+    public float damage = 10f;
+    
     public void Spawn()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,6 +31,16 @@ public class Spell1Physics : MonoBehaviour
         else if (direction == PlayerInfo.Direction.Right)
         {
             move = new Vector2(speed, 0);
+        }
+    } // THIS IS THE THING THAT MAKES THE SPELL HURT THINGS
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // check if the enemy collided with the player
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            // get the player's script component and call TakeDamage
+            Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
+            enemyScript.TakeDamage(damage);
         }
     }
 

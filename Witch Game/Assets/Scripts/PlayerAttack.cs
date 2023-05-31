@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private GameObject spell1;
+    [SerializeField] private float damageAmount = 30f;
+    [SerializeField] private float attackRadius = 1f;
 
     // Start is called before the first frame update
     void Start()
