@@ -9,6 +9,9 @@ public class Spell1Physics : MonoBehaviour
     private Vector2 move = new Vector2(0, 0);
     public float speed = .01f;
     public float damage = 10f;
+    public float despawnTime = 15; // Time in seconds before the projectile despawns
+
+    private float startTime; // The time when the projectile was spawned
     
     public void Spawn()
     {
@@ -32,6 +35,13 @@ public class Spell1Physics : MonoBehaviour
         {
             move = new Vector2(speed, 0);
         }
+
+        // Set the start time of the projectile
+        startTime = Time.time;
+
+        // Schedule the despawn of the projectile
+        Destroy(gameObject, despawnTime);
+
     } // THIS IS THE THING THAT MAKES THE SPELL HURT THINGS
     void OnTriggerEnter2D(Collider2D other)
     {
