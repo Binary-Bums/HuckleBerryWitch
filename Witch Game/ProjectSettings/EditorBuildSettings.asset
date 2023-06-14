@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Main.unity
     guid: 1e85f23b4ddce2b4283b5e6defc2fd60
   - enabled: 1
-    path: Assets/Scenes/Purgatory.unity
-    guid: f16d5e9ab5135b24799d026c5e8d8597
+    path: Assets/Scenes/PurgMaze.unity
+    guid: 567e46f28b70648edb75bb4792d1b5e7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

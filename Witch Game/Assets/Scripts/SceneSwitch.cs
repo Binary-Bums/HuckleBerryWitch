@@ -6,7 +6,7 @@ public class SceneSwitch : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Purgatory");
+            SceneManager.LoadScene("PurgMaze");
         }      
     }
 }
