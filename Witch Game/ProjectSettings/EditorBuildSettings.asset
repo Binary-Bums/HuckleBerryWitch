@@ -5,18 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Main.unity
     guid: 1e85f23b4ddce2b4283b5e6defc2fd60
   - enabled: 1
     path: Assets/Scenes/PurgMaze.unity
     guid: 567e46f28b70648edb75bb4792d1b5e7
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/PurgatoryCity.unity
     guid: a0934edbcf95d4794bd6c126398f1910
