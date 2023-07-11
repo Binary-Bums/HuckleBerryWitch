@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     public float health = 1f;
     public float damage = 30f;
     public float range = .5f;
-    protected bool seePlayer = false;
+    public float hitCooldown = 1f;
+    protected float nextAttackTime = 0;
 
 
     public void TakeDamage(float damage){
@@ -25,5 +26,16 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
+    protected void Update()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) > range) NeutralMovement();
+
+        else DetectPlayer();
+    }
+    
+    protected virtual void NeutralMovement(){}
+
+    protected virtual void DetectPlayer(){}
 }
 
