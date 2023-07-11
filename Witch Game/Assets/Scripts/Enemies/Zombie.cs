@@ -9,7 +9,7 @@ public class Zombie : Enemy {
         {
             // get the player's script component and call TakeDamage
             Attack(other.gameObject.GetComponentInParent<PlayerInfo>());
-            nextAttackTime = Time.time + hitCooldown;
+            nextAttackTime = Time.time + attackCooldown;
         }
     }
 

@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float health = 1f;
     public float damage = 30f;
     public float range = .5f;
-    public float hitCooldown = 1f;
+    public float attackCooldown = 1f;
     protected float nextAttackTime = 0;
 
 
