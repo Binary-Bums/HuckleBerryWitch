@@ -5,14 +5,14 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] private GameObject targetRoom;
     [SerializeField] private GameObject currentRoom;
-    [SerializeField] private GameObject entrance;
+    [SerializeField] private GameObject targetLocation;
 
     private Transform entranceTransform;
     private Transform playerTransform;
 
     private void Start()
     {
-        entranceTransform = entrance.transform;
+        entranceTransform = targetLocation.transform;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
