@@ -39,6 +39,8 @@ public class Spell1Physics : MonoBehaviour
         // Set the start time of the projectile
         startTime = Time.time;
 
+        GetComponent<Rigidbody2D>().velocity = move * speed;
+
         // Schedule the despawn of the projectile
         Destroy(gameObject, despawnTime);
 
@@ -52,12 +54,5 @@ public class Spell1Physics : MonoBehaviour
             Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
             enemyScript.TakeDamage(damage);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = new Vector3(transform.position.x + move.x, transform.position.y + move.y, transform.position.z);
-        
     }
 }
