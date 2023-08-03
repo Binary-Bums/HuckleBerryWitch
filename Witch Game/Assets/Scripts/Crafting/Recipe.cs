@@ -1,10 +1,10 @@
 using UnityEngine;
 
 public class Recipe : MonoBehaviour {
-    public string[] items = new string[4];
+    public Item[] items = new Item[4];
     public Potion potion;
 
-    public Recipe (string[] i, Potion p)
+    public Recipe (Item[] i, Potion p)
     {
         items = i;
         potion = p;

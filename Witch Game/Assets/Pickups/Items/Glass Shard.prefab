@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1587629372131537157, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: id
+      value: Glass Shard
+      objectReference: {fileID: 0}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,21 +65,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
---- !u!1 &2889742302551752108 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2401812853056693574, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
-  m_PrefabInstance: {fileID: 670641898161789162}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7012186948112938047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2889742302551752108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1b21f2dc508c340881c1d7dc357a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: Glass Shard

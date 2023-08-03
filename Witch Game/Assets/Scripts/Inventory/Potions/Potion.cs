@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class Potion : MonoBehaviour {
-    public string id;
+public class Potion : Equippable
+{
+    public Potion()
+    {
+    }
 }

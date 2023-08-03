@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 259276547751911603}
-  - component: {fileID: 5572571183192756625}
-  - component: {fileID: 2651788985495570066}
-  - component: {fileID: 8462026978325729731}
   m_Layer: 0
   m_Name: Crafting System
   m_TagString: Untagged
@@ -34,48 +31,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5572571183192756625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760734448242623496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dc169d8abbe279448f00085761d36e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 7012186948112938047, guid: 38977ac48332a5541889e8e81b42c98b, type: 3}
-  - {fileID: 1519392550613729315, guid: ada07b20df86dda47ad8145321bfc828, type: 3}
-  - {fileID: 6758546264094166333, guid: aa01d893948a8b6469043c14f8e47d7f, type: 3}
---- !u!114 &2651788985495570066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760734448242623496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0605386d36756aa4294e525d23357eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionList:
-  - {fileID: 1837860523667385614, guid: 1dab488f58b4b53488d682f0a21afed7, type: 3}
-  - {fileID: 1318229113416039956, guid: 031eab6b5e9a77442b13abee3c8b7b20, type: 3}
-  - {fileID: 2271628712915293814, guid: f4278f918cdc11040852680466396d3c, type: 3}
---- !u!114 &8462026978325729731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760734448242623496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e54d62cbee9ea347bb9f2cc2c3c2d25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList: []

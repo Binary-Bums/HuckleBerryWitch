@@ -16,6 +16,7 @@ public class PlayerInfo : MonoBehaviour
 
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] private PlayerInventory inventory;
     private float currentHealth;  // player's health
 
 
@@ -23,6 +24,7 @@ public class PlayerInfo : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth/maxHealth);
+        
     }
     private void Update() {
         if (Input.GetKey(KeyCode.W))

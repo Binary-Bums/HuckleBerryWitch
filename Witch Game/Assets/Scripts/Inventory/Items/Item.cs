@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour {
-    public string id;
+public class Item : Equippable
+{
+    public Item()
+    {
+    }
 }
