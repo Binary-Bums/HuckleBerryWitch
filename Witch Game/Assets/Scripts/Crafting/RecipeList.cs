@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine;
 
-public class RecipeList : MonoBehaviour {
-    public static RecipeList Instance { get; private set; }
+public class RecipeList{
+    private static RecipeList Instance;
 
     private List<Recipe> recipeList;
 
@@ -37,10 +36,10 @@ public class RecipeList : MonoBehaviour {
 
     private Recipe HealthPotion()
     {
-        Item glass = EquippableList.Instance.GetItem("Glass Shard");
-        Item paint = EquippableList.Instance.GetItem("Red Paint");
+        Item glass = EquippableList.GetInstance().GetItem("Glass Shard");
+        Item paint = EquippableList.GetInstance().GetItem("Red Paint");
 
-        return FormRecipe(paint, paint, glass, glass, EquippableList.Instance.GetPotion("Health Potion"));
+        return FormRecipe(paint, paint, glass, glass, EquippableList.GetInstance().GetPotion("Health Potion"));
     }
 
     private Recipe FormRecipe(Item i1, Item i2, Item i3, Item i4, Potion potion)

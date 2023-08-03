@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
-public class EquippableList : MonoBehaviour {
-    public static EquippableList Instance { get; private set; }
+public class EquippableList {
+    private static EquippableList Instance;
     private IDictionary<string, Item> itemList;
     private IDictionary<string, Potion> potionList;
 
@@ -25,7 +23,7 @@ public class EquippableList : MonoBehaviour {
     {
         if (equippableList.ContainsKey(key)) return equippableList[key];
 
-        else return null;
+        else return new Equippable();
     }
 
     public Item GetItem(string key)
@@ -47,14 +45,19 @@ public class EquippableList : MonoBehaviour {
         itemList = new Dictionary<string, Item>()
         {
             {"Glass Shard", new Item()},
-            {"Red Paint", new Item()}
+            {"Red Paint", new Item()},
+            {"Blue Paint", new Item()},
 
         };
 
         potionList = new Dictionary<string, Potion>()
         {
             {"Health Potion", new Potion()},
+            {"Spell Potion", new Potion()},
+            {"Speed Potion", new Potion()},
         };
+
+        equippableList = new Dictionary<string, Equippable>();
 
         foreach (var pair in itemList)
         {
