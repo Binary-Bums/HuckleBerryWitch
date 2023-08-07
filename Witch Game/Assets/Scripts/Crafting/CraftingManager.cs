@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour {
     private PlayerInventory playerInventory;
-    [SerializeField] private Button craftButton;
+    [SerializeField] private Button craftButton, backButton;
     [SerializeField] private GameObject slot, itemContainer;
     public int rows = 2;
     public int columns = 2;
@@ -15,15 +15,13 @@ public class CraftingManager : MonoBehaviour {
 
     private void Start() {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-
-        for (int i = 0; i < rows * columns; i++)
-        {
-            GameObject square = Instantiate(slot, itemContainer.transform);
-            slots[i] = square;
-        }
-
         craftButton.onClick.AddListener(Craft);
+        backButton.onClick.AddListener(Back);
 
+    }
+
+    private void OnEnable() {
+        SetBlanks();
         FillTable();
     }
 
@@ -51,7 +49,7 @@ public class CraftingManager : MonoBehaviour {
     private void SetBlanks()
     {
         
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < itemContainer.transform.childCount; i++)
         {
             Destroy(itemContainer.transform.GetChild(i).gameObject);
             items[i] = null;
@@ -60,6 +58,7 @@ public class CraftingManager : MonoBehaviour {
         for (int i = 0; i < rows * columns; i++)
         {
             GameObject square = Instantiate(slot, itemContainer.transform);
+            slots[i] = square;
         }
     }
 
@@ -85,5 +84,10 @@ public class CraftingManager : MonoBehaviour {
     public void AddToTable(Equippable e)
     {
 
+    }
+
+    private void Back()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -3,12 +3,13 @@ using UnityEngine.InputSystem;
 
 public class CraftingToggle : MonoBehaviour {
     public KeyCode key = KeyCode.C;
+    [SerializeField] private GameObject craftUI;
     private bool range = false;
 
     private void Update() {
-        if (Input.GetKeyDown(key) && range)
+        if (Input.GetKeyDown(key) && range && !craftUI.activeSelf)
         {
-            
+            craftUI.SetActive(true);
         }
     }
 

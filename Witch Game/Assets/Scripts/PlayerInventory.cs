@@ -33,7 +33,7 @@ public class PlayerInventory : MonoBehaviour{
 
             inventory.Add(slot);
             
-           Debug.Log("Crafted " + e.id);
+           Debug.Log("Crafted " + slot.equippable.id);
         }
     }
 
