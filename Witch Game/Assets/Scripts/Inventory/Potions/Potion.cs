@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Potion : Equippable
 {
-    public Potion()
+    public Potion(string id) : base(id)
     {
     }
 }

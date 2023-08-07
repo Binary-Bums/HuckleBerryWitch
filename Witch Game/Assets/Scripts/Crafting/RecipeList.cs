@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class RecipeList{
     private static RecipeList Instance;
@@ -17,12 +18,15 @@ public class RecipeList{
         return Instance;
     }
 
-    // public Recipe GetRecipe(string key)
-    // {
-    //     if (recipeList.ContainsKey(key)) return recipeList[key];
+    public Recipe GetRecipe(Item[] items)
+    {
+        foreach (Recipe recipe in recipeList)
+        {
+            if (recipe.items.SequenceEqual(items)) return recipe;
+        }
 
-    //     else return null;
-    // }
+        return null;
+    }
 
     private void FillDictionary()
     {
@@ -47,5 +51,15 @@ public class RecipeList{
         Item[] items = {i1, i2, i3, i4};
 
         return new Recipe(items, potion);
+    }
+
+    public bool CheckRecipe(Item[] items)
+    {
+        foreach (Recipe recipe in recipeList)
+        {
+            if (recipe.items == items) return true;
+        }
+
+        return false;
     }
 }

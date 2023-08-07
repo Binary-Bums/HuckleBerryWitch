@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Recipe : MonoBehaviour {
+public class Recipe {
     public Item[] items = new Item[4];
     public Potion potion;
 

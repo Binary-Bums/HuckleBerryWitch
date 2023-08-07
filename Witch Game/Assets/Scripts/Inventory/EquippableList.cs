@@ -23,7 +23,7 @@ public class EquippableList {
     {
         if (equippableList.ContainsKey(key)) return equippableList[key];
 
-        else return new Equippable();
+        else return new Equippable("");
     }
 
     public Item GetItem(string key)
@@ -44,17 +44,17 @@ public class EquippableList {
     {
         itemList = new Dictionary<string, Item>()
         {
-            {"Glass Shard", new Item()},
-            {"Red Paint", new Item()},
-            {"Blue Paint", new Item()},
+            {"Glass Shard", new Item("Glass Shard")},
+            {"Red Paint", new Item("Red Paint")},
+            {"Blue Paint", new Item("Blue Paint")},
 
         };
 
         potionList = new Dictionary<string, Potion>()
         {
-            {"Health Potion", new Potion()},
-            {"Spell Potion", new Potion()},
-            {"Speed Potion", new Potion()},
+            {"Health Potion", new Potion("Health Potion")},
+            {"Spell Potion", new Potion("Spell Potion")},
+            {"Speed Potion", new Potion("Speed Potion")},
         };
 
         equippableList = new Dictionary<string, Equippable>();

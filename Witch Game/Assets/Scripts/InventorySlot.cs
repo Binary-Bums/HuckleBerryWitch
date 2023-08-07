@@ -1,15 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 public class InventorySlot : MonoBehaviour
 {
-    public string id;
-    public Sprite sprite;
     public Equippable equippable;
-
-    public void Initialize(string id, Sprite sprite, Equippable equippable)
+    public Sprite sprite;
+    public void Initialize(Equippable equippable, Sprite sprite)
     {
-        this.id = id;
-        this.sprite = sprite;
         this.equippable = equippable;
+        this.sprite = sprite;
+
+        GetComponent<Image>().sprite = sprite;
     }
     
 }
