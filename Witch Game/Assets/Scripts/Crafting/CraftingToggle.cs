@@ -7,9 +7,9 @@ public class CraftingToggle : MonoBehaviour {
     private bool range = false;
 
     private void Update() {
-        if (Input.GetKeyDown(key) && range && !craftUI.activeSelf)
+        if (Input.GetKeyDown(key) && range)
         {
-            craftUI.SetActive(true);
+            craftUI.SetActive(!craftUI.activeSelf);
         }
     }
 

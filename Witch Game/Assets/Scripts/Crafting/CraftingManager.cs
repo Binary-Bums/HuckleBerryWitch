@@ -16,12 +16,16 @@ public class CraftingManager : MonoBehaviour {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         craftButton.onClick.AddListener(Craft);
         backButton.onClick.AddListener(Back);
-
     }
 
     private void OnEnable() {
+        Time.timeScale = 0;
         SetBlanks();
         FillTable();
+    }
+
+    private void OnDisable() {
+        Time.timeScale = 1;
     }
 
     private void FillTable()

@@ -16,7 +16,6 @@ public class PlayerInfo : MonoBehaviour
 
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private HealthBar healthBar;
-    [SerializeField] private PlayerInventory inventory;
     private float currentHealth;  // player's health
 
 
