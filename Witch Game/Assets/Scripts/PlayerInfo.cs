@@ -23,6 +23,7 @@ public class PlayerInfo : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth/maxHealth);
+        
     }
     private void Update() {
         if (Input.GetKey(KeyCode.W))
