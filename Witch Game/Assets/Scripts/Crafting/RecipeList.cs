@@ -30,8 +30,6 @@ public class RecipeList{
 
     private void FillDictionary()
     {
-
-
         recipeList = new List<Recipe>()
         {
             HealthPotion(),

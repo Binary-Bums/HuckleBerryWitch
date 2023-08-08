@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2920578548707817745
+--- !u!1001 &6603514369978186020
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,19 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1587629372131537157, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: id
-      value: Red Paint
+      value: Health Potion
       objectReference: {fileID: 0}
+    - target: {fileID: -1587629372131537157, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: equippable
+      value: 
+      objectReference: {fileID: 11400000, guid: 99708f3154cdb6545b93fcef036278cb, type: 2}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.214367
+      value: 18.49
       objectReference: {fileID: 0}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 53.220356
+      value: 50.7
       objectReference: {fileID: 0}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -56,16 +60,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+    - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_Color.b
-      value: 0.11859834
+      value: 0.4110512
       objectReference: {fileID: 0}
     - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_Color.g
-      value: 0.11859834
+      value: 0.4110512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2401812853056693574, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_Name
-      value: Red Paint
+      value: Health Potion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}

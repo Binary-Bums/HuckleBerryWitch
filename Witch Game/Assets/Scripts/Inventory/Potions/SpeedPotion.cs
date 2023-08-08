@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class SpeedPotion : Potion
-{
-    public SpeedPotion(string id) : base(id)
-    {
-    }
-}
+// public class SpeedPotion : Potion
+// {
+//     public SpeedPotion(string id) : base(id)
+//     {
+//     }
+// }

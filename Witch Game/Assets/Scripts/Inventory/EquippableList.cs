@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class EquippableList {
     private static EquippableList Instance;
@@ -23,7 +24,7 @@ public class EquippableList {
     {
         if (equippableList.ContainsKey(key)) return equippableList[key];
 
-        else return new Equippable("");
+        else return null;
     }
 
     public Item GetItem(string key)
@@ -42,31 +43,23 @@ public class EquippableList {
 
     private void FillDictionary()
     {
-        itemList = new Dictionary<string, Item>()
-        {
-            {"Glass Shard", new Item("Glass Shard")},
-            {"Red Paint", new Item("Red Paint")},
-            {"Blue Paint", new Item("Blue Paint")},
-
-        };
-
-        potionList = new Dictionary<string, Potion>()
-        {
-            {"Health Potion", new Potion("Health Potion")},
-            {"Spell Potion", new Potion("Spell Potion")},
-            {"Speed Potion", new Potion("Speed Potion")},
-        };
-
+        itemList = new Dictionary<string, Item>();
+        potionList = new Dictionary<string, Potion>();
         equippableList = new Dictionary<string, Equippable>();
 
-        foreach (var pair in itemList)
+        Item[] items = Resources.LoadAll<Item>("Items/");
+        Potion[] potions = Resources.LoadAll<Potion>("Potions/");
+        
+        foreach (Item item in items)
         {
-            equippableList.Add(pair.Key, pair.Value);
+            itemList.Add(item.id, item);
+            equippableList.Add(item.id, item);
         }
 
-        foreach (var pair in potionList)
+        foreach (Potion potion in potions)
         {
-            equippableList.Add(pair.Key, pair.Value);
+            potionList.Add(potion.id, potion);
+            equippableList.Add(potion.id, potion);
         }
     }
 }

@@ -7,14 +7,14 @@ public class PlayerInventory : MonoBehaviour{
 
     private List<InventorySlot> inventory = new List<InventorySlot>();
 
-    public void AddToInventory(Pickup e, Sprite s)
+    public void AddToInventory(Pickup e)
     {
         if (inventory.Count < maxItems) 
         {
             GameObject slotObject = Instantiate(slotPrefab, transform);
             InventorySlot slot = slotObject.GetComponent<InventorySlot>();
 
-            slot.Initialize(EquippableList.GetInstance().GetEquippable(e.id), s);
+            slot.Initialize(e.equippable);
 
             inventory.Add(slot);
             
@@ -22,18 +22,16 @@ public class PlayerInventory : MonoBehaviour{
         }
     }
 
-    public void AddToInventory(Equippable e, Sprite s)
+    public void AddToInventory(Equippable e)
     {
         if (inventory.Count < maxItems) 
         {
             GameObject slotObject = Instantiate(slotPrefab, transform);
             InventorySlot slot = slotObject.GetComponent<InventorySlot>();
 
-            slot.Initialize(e, s);
+            slot.Initialize(e);
 
             inventory.Add(slot);
-            
-           Debug.Log("Crafted " + slot.equippable.id);
         }
     }
 
