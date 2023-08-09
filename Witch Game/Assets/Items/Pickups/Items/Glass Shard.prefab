@@ -59,10 +59,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
-      propertyPath: m_Color.a
-      value: 0.30588236
-      objectReference: {fileID: 0}
     - target: {fileID: 2401812853056693574, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_Name
       value: Glass Shard

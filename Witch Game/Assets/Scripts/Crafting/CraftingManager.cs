@@ -12,16 +12,22 @@ public class CraftingManager : MonoBehaviour {
     private Item[] items = new Item[4];
     private GameObject[] slots = new GameObject[4];
 
-    private void Start() {
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+    private void Awake() {
         craftButton.onClick.AddListener(Craft);
         backButton.onClick.AddListener(Back);
+        CraftingToggle.ToggleCrafting += ToggleCraftingUI;
+    }
+
+    private void Start() {
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        gameObject.SetActive(false);
     }
 
     private void OnEnable() {
         Time.timeScale = 0;
         SetBlanks();
         FillTable();
+        
     }
 
     private void OnDisable() {
@@ -83,6 +89,11 @@ public class CraftingManager : MonoBehaviour {
     public void AddToTable(Equippable e)
     {
 
+    }
+
+    private void ToggleCraftingUI()
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 
     private void Back()

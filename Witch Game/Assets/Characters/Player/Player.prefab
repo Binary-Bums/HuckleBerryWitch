@@ -90,15 +90,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3887430532554496194}
   - component: {fileID: 8787434533357900334}
-  - component: {fileID: 2899717152723610165}
   - component: {fileID: 7514663428189073753}
   - component: {fileID: 2759549034967853106}
   - component: {fileID: 6995917793473651365}
   - component: {fileID: 3335132664331661519}
+  - component: {fileID: 2899717152723610165}
   - component: {fileID: 5107459668208555081}
   - component: {fileID: 2945564229793816500}
   - component: {fileID: 7014088077933691839}
-  - component: {fileID: 2883370966140506875}
   - component: {fileID: 7281152136169354138}
   m_Layer: 0
   m_Name: Player
@@ -175,33 +174,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2899717152723610165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327647173130217831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f31c36dab090c4836ae5b1e585a9bec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 6
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!50 &7514663428189073753
 Rigidbody2D:
   serializedVersion: 4
@@ -284,7 +256,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   maxHealth: 100
-  healthBar: {fileID: 0}
+--- !u!114 &2899717152723610165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327647173130217831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31c36dab090c4836ae5b1e585a9bec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!114 &5107459668208555081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,21 +374,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2883370966140506875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327647173130217831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 909abc1147643944bb60e1eabd05e023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestObj: {fileID: 0}
-  interactionRange: 3
-  chestToggleScript: {fileID: 0}
 --- !u!114 &7281152136169354138
 MonoBehaviour:
   m_ObjectHideFlags: 0
