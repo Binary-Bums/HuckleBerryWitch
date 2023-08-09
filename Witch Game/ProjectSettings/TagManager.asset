@@ -9,6 +9,8 @@ TagManager:
   - Basement
   - Enemy
   - playerBody
+  - Canvas
+  - Crafting
   layers:
   - Default
   - TransparentFX

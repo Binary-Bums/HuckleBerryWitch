@@ -1,14 +1,15 @@
 using UnityEngine;
 
-public class CraftingToggle : MonoBehaviour {
+public class ChestToggle : MonoBehaviour
+{
     public KeyCode key = KeyCode.C;
-    public static event System.Action ToggleCrafting;
+    public static event System.Action ToggleChest;
     private bool range = false;
 
     private void Update() {
         if (Input.GetKeyDown(key) && range)
         {
-            ToggleCrafting?.Invoke();
+            ToggleChest?.Invoke();
         }
     }
 
