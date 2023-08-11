@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[CreateAssetMenu(fileName = "Dialog", menuName = "")]
 
-public class Dialog
+public class Dialog : ScriptableObject
 {
-    public string name;
+    public string characterName;
     [TextArea(3, 10)]
     public string[] sentences;
 }

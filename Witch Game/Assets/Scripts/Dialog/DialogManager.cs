@@ -5,23 +5,31 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
+    [SerializeField] Button continueButton;
+    public Text nameText, dialogText;
+    private Queue<string> sentences = new();
 
-    public Text nameText;
-    public Text dialogText;
+    private void Awake() {
+        continueButton.onClick.AddListener(Continue);
 
-    private Queue<string> sentences;
+        EventToggle.SendDialog += StartDialog;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        sentences = new Queue<string>();
+        gameObject.SetActive(false);
+    }
+
+    private void OnEnable() {
+        Time.timeScale = 0;
+    }
+
+    private void OnDisable() {
+        Time.timeScale = 1;
     }
 
     public void StartDialog(Dialog dialog)
     {
-        
+        gameObject.SetActive(true);
 
-        nameText.text = dialog.name;
+        nameText.text = dialog.characterName;
 
         sentences.Clear();
 
@@ -47,7 +55,17 @@ public class DialogManager : MonoBehaviour
 
     void EndDialog()
     {
-        Debug.Log("End of conversation");
+        gameObject.SetActive(false);
+    }
+
+    private void Continue()
+    {
+        if(sentences.Count >= 1)
+        {
+            DisplayNextSentence();
+        } else {
+            EndDialog();
+        }
     }
 
     
