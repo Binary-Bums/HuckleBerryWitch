@@ -14,6 +14,7 @@ public class PlayerInfo : MonoBehaviour
 
     public Direction direction = Direction.Down;
 
+    private Animator anim;
     [SerializeField] private float maxHealth = 100f;
     private HealthBar healthBar;
     private float currentHealth;  // player's health
@@ -22,6 +23,8 @@ public class PlayerInfo : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+
+        TryGetComponent(out anim);
 
         healthBar = GameObject.FindGameObjectWithTag("Canvas").transform.GetComponentInChildren<HealthBar>();
         healthBar.SetHealth(currentHealth/maxHealth);
@@ -44,6 +47,8 @@ public class PlayerInfo : MonoBehaviour
         {
             direction = Direction.Right;
         }
+
+        anim.SetInteger("Direction", (int)direction);
     }
 
     public void TakeDamage(float damage)

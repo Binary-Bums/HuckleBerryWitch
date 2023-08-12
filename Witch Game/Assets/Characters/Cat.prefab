@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6738276662080924920}
   - component: {fileID: 7224628596985320708}
   - component: {fileID: -2409996092380529917}
-  - component: {fileID: 5120702324600884003}
   - component: {fileID: 3064562258057846782}
+  - component: {fileID: 8851670791945884718}
   m_Layer: 5
   m_Name: Cat
   m_TagString: Feline
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1442624200683971200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54034da052869ae4b9fceba8c133ab19, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 1913564333, guid: 73ff556fe040d084ca6a08448024f704, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,22 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &5120702324600884003
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442624200683971200}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.6, y: 3.6}
-  m_Direction: 0
 --- !u!114 &3064562258057846782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPositions: []
   movementSpeed: 1
+--- !u!58 &8851670791945884718
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442624200683971200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.59516937
