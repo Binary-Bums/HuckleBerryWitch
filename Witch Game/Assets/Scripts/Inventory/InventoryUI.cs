@@ -1,24 +1,12 @@
-
 using UnityEngine;
 
-public class InvetoryUI : MonoBehaviour
+public class InventoryUI : MonoBehaviour
 {
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-      
+    private PlayerInventory playerInventory;
+
+    private void Start() {
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
     
-    }
-
-    void UpdateUI()
-    {
-       
-    }
 }
