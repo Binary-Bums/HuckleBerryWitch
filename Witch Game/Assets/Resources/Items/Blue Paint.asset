@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Blue Paint
   m_EditorClassIdentifier: 
   id: Blue Paint
-  sprite: {fileID: 21300000, guid: a36af60244ae7d141ab79ea60162cb1f, type: 3}
+  sprite: {fileID: 21300000, guid: 5e1d16cf13cb9ba428385604b8614285, type: 3}

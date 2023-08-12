@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    public Equippable equippable;
-    public void Initialize(Equippable equippable)
+    public InventoryItem inventoryItem;
+    public void Initialize(InventoryItem inventoryItem)
     {
-        this.equippable = equippable;
+        this.inventoryItem = inventoryItem;
 
-        GetComponent<Image>().sprite = equippable.sprite;
+        GetComponent<Image>().sprite = inventoryItem.sprite;
     }   
 }

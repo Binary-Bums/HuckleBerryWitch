@@ -1,28 +1,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquippableList {
-    private static EquippableList Instance;
+public class InventoryItemList {
+    private static InventoryItemList Instance;
     private IDictionary<string, Item> itemList;
     private IDictionary<string, Potion> potionList;
 
-    private IDictionary<string, Equippable> equippableList;
+    private IDictionary<string, InventoryItem> inventoryItemList;
 
-    private EquippableList()
+    private InventoryItemList()
     {
         FillDictionary();
     }
 
-    public static EquippableList GetInstance()
+    public static InventoryItemList GetInstance()
     {
-        Instance ??= new EquippableList();
+        Instance ??= new InventoryItemList();
 
         return Instance;
     }
 
-    public Equippable GetEquippable(string key)
+    public InventoryItem GetEquippable(string key)
     {
-        if (equippableList.ContainsKey(key)) return equippableList[key];
+        if (inventoryItemList.ContainsKey(key)) return inventoryItemList[key];
 
         else return null;
     }
@@ -45,7 +45,7 @@ public class EquippableList {
     {
         itemList = new Dictionary<string, Item>();
         potionList = new Dictionary<string, Potion>();
-        equippableList = new Dictionary<string, Equippable>();
+        inventoryItemList = new Dictionary<string, InventoryItem>();
 
         Item[] items = Resources.LoadAll<Item>("Items/");
         Potion[] potions = Resources.LoadAll<Potion>("Potions/");
@@ -53,13 +53,13 @@ public class EquippableList {
         foreach (Item item in items)
         {
             itemList.Add(item.id, item);
-            equippableList.Add(item.id, item);
+            inventoryItemList.Add(item.id, item);
         }
 
         foreach (Potion potion in potions)
         {
             potionList.Add(potion.id, potion);
-            equippableList.Add(potion.id, potion);
+            inventoryItemList.Add(potion.id, potion);
         }
     }
 }

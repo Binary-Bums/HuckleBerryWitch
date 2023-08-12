@@ -40,14 +40,14 @@ public class CraftingManager : MonoBehaviour {
 
         while (i < rows)
         {
-            items[i] = EquippableList.GetInstance().GetItem("Red Paint");
+            items[i] = InventoryItemList.GetInstance().GetItem("Red Paint");
             slots[i].GetComponent<InventorySlot>().Initialize(items[i]);
             i++;
         }
 
         while (i < rows + columns)
         {
-            items[i] = EquippableList.GetInstance().GetItem("Glass Shard");
+            items[i] = InventoryItemList.GetInstance().GetItem("Glass Shard");
             slots[i].GetComponent<InventorySlot>().Initialize(items[i]);
             i++;
         }
@@ -86,7 +86,7 @@ public class CraftingManager : MonoBehaviour {
         }
     }
 
-    public void AddToTable(Equippable e)
+    public void AddToTable(InventoryItem e)
     {
 
     }

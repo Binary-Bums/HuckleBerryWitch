@@ -22,7 +22,7 @@ public class PlayerInventory : MonoBehaviour{
         }
     }
 
-    public void AddToInventory(Equippable e)
+    public void AddToInventory(InventoryItem e)
     {
         if (inventory.Count < maxItems) 
         {
@@ -35,13 +35,13 @@ public class PlayerInventory : MonoBehaviour{
         }
     }
 
-    public void RemoveFromInventory(Equippable e)
+    public void RemoveFromInventory(InventoryItem e)
     {
         InventorySlot current = null;
 
         foreach (InventorySlot i in inventory)
         {
-            if (i.equippable == e)
+            if (i.inventoryItem == e)
             {
                 current = i;
                 break;

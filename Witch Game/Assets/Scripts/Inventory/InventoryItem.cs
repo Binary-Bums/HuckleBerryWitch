@@ -1,8 +1,8 @@
 using UnityEngine;
-public class Equippable : ScriptableObject{
+public class InventoryItem : ScriptableObject{
     public string id;
     public Sprite sprite;
-    public Equippable (string id, Sprite sprite)
+    public InventoryItem (string id, Sprite sprite)
     {
         this.id = id;
         this.sprite = sprite;
