@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Pickup : MonoBehaviour {
-    public InventoryItem equippable;
+    public InventoryItem inventoryItem;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("playerBody"))
