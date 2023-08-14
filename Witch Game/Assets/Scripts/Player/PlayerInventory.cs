@@ -43,20 +43,9 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void RemoveFromInventory(InventoryItem e)
+    public void RemoveFromInventory(int i)
     {
-        InventorySlot current = null;
-
-        foreach (InventorySlot i in inventory)
-        {
-            if (i.inventoryItem == e)
-            {
-                current = i;
-                break;
-            }
-        }
-
-        if (current != null) inventory.Remove(current);
+        inventoryUI.transform.GetChild(i).GetComponent<InventorySlot>().Reset();
     }
 
     public int isEmptySlot()

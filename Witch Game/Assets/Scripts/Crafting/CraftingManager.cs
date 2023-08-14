@@ -76,7 +76,7 @@ public class CraftingManager : MonoBehaviour {
         if (recipe != null)
         {
             
-            foreach (Item item in items) playerInventory.RemoveFromInventory(item);
+            // foreach (Item item in items) playerInventory.RemoveFromInventory(item);
 
             playerInventory.AddToInventory(recipe.potion);
 
