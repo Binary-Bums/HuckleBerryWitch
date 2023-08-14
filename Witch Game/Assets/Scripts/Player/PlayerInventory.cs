@@ -14,12 +14,12 @@ public class PlayerInventory : MonoBehaviour
     {
         if (inventory.Count < maxItems)
         {
-            GameObject slotObject = Instantiate(slotPrefab, transform);
-            InventorySlot slot = slotObject.GetComponent<InventorySlot>();
+            // GameObject slotObject = Instantiate(slotPrefab, transform);
+            // InventorySlot slot = slotObject.GetComponent<InventorySlot>();
 
-            slot.Initialize(e.inventoryItem);
+            // slot.Initialize(e.inventoryItem);
 
-            inventory.Add(slot);
+            // inventory.Add(slot);
 
             e.PickedUp();
         }
@@ -29,12 +29,12 @@ public class PlayerInventory : MonoBehaviour
     {
         if (inventory.Count < maxItems)
         {
-            GameObject slotObject = Instantiate(slotPrefab, transform);
-            InventorySlot slot = slotObject.GetComponent<InventorySlot>();
+            // GameObject slotObject = Instantiate(slotPrefab, transform);
+            // InventorySlot slot = slotObject.GetComponent<InventorySlot>();
 
-            slot.Initialize(e);
+            // slot.Initialize(e);
 
-            inventory.Add(slot);
+            // inventory.Add(slot);
 
             if (isEmptySlot() != -1)
             {
