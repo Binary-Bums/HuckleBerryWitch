@@ -35,10 +35,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4010590736012822173}
+  - {fileID: 5851689158333869524}
   - {fileID: 2337877215217978530}
   - {fileID: 4437969440489676802}
   - {fileID: 6020196182144598860}
-  - {fileID: 5851689158333869524}
   - {fileID: 5611889717318721149}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466828185425669261, guid: 82b96bacb2ddb244cbe1e0e93595bb7a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4466828185425669261, guid: 82b96bacb2ddb244cbe1e0e93595bb7a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1116,7 +1116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4474645891088384548, guid: 5b09221d8d3c5e245b3d2a56cf4e5447, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4474645891088384548, guid: 5b09221d8d3c5e245b3d2a56cf4e5447, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1561,7 +1561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8048128535274021728, guid: cbd5935953a3040468e3961426c77449, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8048128535274021728, guid: cbd5935953a3040468e3961426c77449, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1675,7 +1675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1776208655407450345, guid: 38e5ee1c99e26234fae38fd92ef219c1, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1776208655407450345, guid: 38e5ee1c99e26234fae38fd92ef219c1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1752,6 +1752,10 @@ PrefabInstance:
     - target: {fileID: 1776208655407450346, guid: 38e5ee1c99e26234fae38fd92ef219c1, type: 3}
       propertyPath: m_Name
       value: Crafting
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776208655407450351, guid: 38e5ee1c99e26234fae38fd92ef219c1, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e5ee1c99e26234fae38fd92ef219c1, type: 3}
