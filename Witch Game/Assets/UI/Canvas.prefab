@@ -1274,6 +1274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crafting
       objectReference: {fileID: 0}
+    - target: {fileID: 1776208655407450351, guid: 38e5ee1c99e26234fae38fd92ef219c1, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e5ee1c99e26234fae38fd92ef219c1, type: 3}
 --- !u!224 &5851689158333869524 stripped

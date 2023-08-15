@@ -89,5 +89,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def3e7bd819e12a4fb46801e6104d1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  sprite: {fileID: 0}
+  equippable: {fileID: 0}
