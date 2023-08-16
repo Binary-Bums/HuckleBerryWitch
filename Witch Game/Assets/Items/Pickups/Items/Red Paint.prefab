@@ -59,9 +59,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 98dd3027abb010e4788fbdd96c0e4e19, type: 3}
     - target: {fileID: 2401812853056693574, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_Name
       value: Red Paint
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}

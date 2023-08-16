@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInfo : MonoBehaviour
 {
@@ -58,7 +59,7 @@ public class PlayerInfo : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -70,5 +71,11 @@ public class PlayerInfo : MonoBehaviour
             currentHealth = maxHealth;
 
         healthBar.SetHealth(currentHealth/maxHealth);
+    }
+
+    private void Die()
+    {
+        int mainMenuSceneIndex = 0;
+        SceneManager.LoadScene(mainMenuSceneIndex);
     }
 }
