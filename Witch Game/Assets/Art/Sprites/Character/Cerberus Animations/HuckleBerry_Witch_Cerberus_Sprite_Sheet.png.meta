@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,9 +101,966 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e63a07d6c80c6f48bc9390fe10421ef
+      internalID: 743360057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c868a24c9a7afa49846f50f44081c58
+      internalID: 1217364233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 640
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9397bab0b1b3d44791c61dee180ce1b
+      internalID: 1137505047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 640
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c456cb0eff24faa4b9e86e7392bf65de
+      internalID: -1242611195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 640
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a260475764cd7b54caaba7d1309e45e6
+      internalID: 1449725019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcbe92a05f6b7e44a3b2209df31d783
+      internalID: -128085964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42118f9c62d791459f1d028975589f5
+      internalID: 603186119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821d6f58ae0848941aa352c1b48feac5
+      internalID: 478025428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dba60c21baca754f891b1a0e0c0408c
+      internalID: -699440009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4143b559f492e8448cd1dbddf26c48a
+      internalID: -1006453447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6249abc9a01b546ace65188475c0c3
+      internalID: 1078331708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb87bf85a149fe468e0716804adc951
+      internalID: 1420401725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba94fd4c0abc4447ba33c9a997550ec
+      internalID: 1082846435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c41ccb433df0f4448018ce7231f9306
+      internalID: -677517052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092a78838fe36064aa2f8e8def446240
+      internalID: -12412604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810c6661caea6634989313c1a32d709e
+      internalID: 1425862419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb4d84fce1c87a45bc631b34eba8adc
+      internalID: 1045596309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baa394c479aa184ab0db7578cb67380
+      internalID: 1632553917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135c11c0ae2ff5b4fb38acaba0444ebb
+      internalID: 81798414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89de0bd3a3483c4287c3676d6ca3cd3
+      internalID: -1824756720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798313f9400701948b1ba11b88cf6c58
+      internalID: 1292658839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1360d09c0733f4ca9970423155b554
+      internalID: -1005482589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39dc1b4c9d23514bb9a29910b367ed5
+      internalID: -1629205048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a7b3cf5b8d9d245b609b7dbc42d782
+      internalID: 2038022021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e119d581a4df59a408287d968bb5b308
+      internalID: -1949469036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c659d99eb92ae34da31dbd69e7e4bce
+      internalID: 407088091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674059e8d731ea64fb776491e70abcda
+      internalID: -1942690106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da682d55e58b6a04a937db5101f5936f
+      internalID: 2071379693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93d8a027c82040479336e2a6dd1fd23
+      internalID: 1401678561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366fcff8ede2f6349bfe6f61d1f36754
+      internalID: 15867025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0b19b52f42d9e41b3f5a48f467a465
+      internalID: 820727387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbe4de156fc35d4daa2d52e2f77b6c1
+      internalID: -1730157674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4034022a44a7a7047979a035389762ec
+      internalID: 1326040824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee3b4c437313604fbdfaf92c248a442
+      internalID: 1192620952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9550a017b8802844992bba90ef8d1fe4
+      internalID: -694250339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92fcc2e3e3b60b408b5944acac1d64b
+      internalID: -934489855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482a112ab42703f44ba1aabc115d6c4d
+      internalID: -1936691062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d6cc51cae0bb843bc6390426b52c81
+      internalID: 861841019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7796d9803139dbb4486f233528b1c554
+      internalID: 968598414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6683bc90a1d27044f80e0d1f30b4e464
+      internalID: 353259180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271e826eb5f5c8c4ab59244926108000
+      internalID: 1359053785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af6248be71204a40bf6ab1ab5f84051
+      internalID: -929686483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e5c0478816684489bfaa226bfd6b92
+      internalID: 1418366530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef4a5b4e0530bb47b56a39a0ace1f3c
+      internalID: -1656014620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HuckleBerry_Witch_Cerberus_Sprite_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e850e00dcba36408e8878b4811e1b0
+      internalID: 115899090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +1071,52 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_0: 743360057
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_1: 1217364233
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_10: 1078331708
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_11: 1420401725
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_12: 1082846435
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_13: -677517052
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_14: -12412604
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_15: 1425862419
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_16: 1045596309
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_17: 1632553917
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_18: 81798414
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_19: -1824756720
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_2: 1137505047
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_20: 1292658839
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_21: -1005482589
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_22: -1629205048
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_23: 2038022021
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_24: -1949469036
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_25: 407088091
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_26: -1942690106
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_27: 2071379693
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_28: 1401678561
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_29: 15867025
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_3: -1242611195
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_30: 820727387
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_31: -1730157674
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_32: 1326040824
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_33: 1192620952
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_34: -694250339
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_35: -934489855
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_36: -1936691062
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_37: 861841019
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_38: 968598414
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_39: 353259180
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_4: 1449725019
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_40: 1359053785
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_41: -929686483
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_42: 1418366530
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_43: -1656014620
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_44: 115899090
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_5: -128085964
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_6: 603186119
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_7: 478025428
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_8: -699440009
+      HuckleBerry_Witch_Cerberus_Sprite_Sheet_9: -1006453447
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
