@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Cerberus : MonoBehaviour {
@@ -20,6 +21,7 @@ public class Cerberus : MonoBehaviour {
     private float nextAttackTime; // When the next attack can happen
 
     private bool acting = false;
+    private bool hitWall = false;
 
     private State state = State.Neutral;
     private PlayerInfo.Direction direction = PlayerInfo.Direction.Down;
@@ -60,10 +62,13 @@ public class Cerberus : MonoBehaviour {
         {
             // get the player's script component and call TakeDamage
             playerInfo.TakeDamage(touchDamage);
+        } else if (other.gameObject.CompareTag("Wall"))
+        {
+            hitWall = true;
         }
     }
 
-    private void CheckDirection()
+    private Vector3 CheckPlayerDirection()
     {
         Vector3 playerDirection = (player.transform.position - transform.position).normalized;
 
@@ -93,6 +98,8 @@ public class Cerberus : MonoBehaviour {
         }
 
         anim.SetInteger("Direction", (int)direction);
+
+        return playerDirection;
     }
 
     private void Decide(int actions)
@@ -117,37 +124,70 @@ public class Cerberus : MonoBehaviour {
 
     private void ChargeFire()
     {
-        CheckDirection();
+        CheckPlayerDirection();
         anim.SetBool("Fire", true);
     }
 
     private void Move(float speed, float time, float cooldown)
     {
-        CheckDirection();
+        // Possible directions to choose from
+        List<PlayerInfo.Direction> directions = new List<PlayerInfo.Direction>((PlayerInfo.Direction[])System.Enum.GetValues(typeof(PlayerInfo.Direction)));
+
         // Determine the direction vector based on the direction variable
         Vector2 moveDirection = Vector2.zero;
-        switch (direction)
-        {
-            case PlayerInfo.Direction.Up:
-                moveDirection = Vector2.up;
-                break;
-            case PlayerInfo.Direction.Down:
-                moveDirection = Vector2.down;
-                break;
-            case PlayerInfo.Direction.Left:
-                moveDirection = Vector2.left;
-                break;
-            case PlayerInfo.Direction.Right:
-                moveDirection = Vector2.right;
-                break;
-        }
 
-        // Raycast in the move direction to check for barriers
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDirection, 1f /* or desired distance */);
-        if (hit.collider != null && hit.collider.tag == "Barrier")
+        float wallCheckDistance = 10;
+
+
+        // Keep trying random directions until a valid one without a barrier is found
+        while (directions.Count > 0)
         {
-            // Barrier detected, don't move
-            return;
+            // Pick a random direction
+            int randomIndex = Random.Range(0, directions.Count);
+            direction = directions[randomIndex];
+
+            // Translate the enum direction into a Vector2
+            switch (direction)
+            {
+                case PlayerInfo.Direction.Up:
+                    moveDirection = Vector2.up;
+                    break;
+                case PlayerInfo.Direction.Down:
+                    moveDirection = Vector2.down;
+                    break;
+                case PlayerInfo.Direction.Left:
+                    moveDirection = Vector2.left;
+                    break;
+                case PlayerInfo.Direction.Right:
+                    moveDirection = Vector2.right;
+                    break;
+            }
+
+            // Get the layer number for "Wall"
+            int layerNumber = LayerMask.NameToLayer("Walls");
+
+            // Create a layer mask that includes only the "Wall" layer
+            int layerMask = 1 << layerNumber;
+
+            // Raycast in the move direction to check for barriers
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDirection, wallCheckDistance, layerMask);
+
+            Debug.DrawRay(transform.position, moveDirection * wallCheckDistance, Color.red, 2f); // Duration of 1 second
+            
+            if (hit.collider != null)
+            {
+                Debug.Log("Raycast hit: " + hit.collider.name);
+                directions.RemoveAt(randomIndex);
+                // Barrier detected, don't move
+                
+            }
+            else
+            {
+                // Remove the direction that led to a barrier
+                Debug.Log("Raycast missed.");
+                break;
+                
+            }
         }
 
         // Start the movement coroutine
@@ -160,15 +200,19 @@ public class Cerberus : MonoBehaviour {
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = transform.position + (Vector3)moveDirection * speed;
 
+        anim.SetInteger("Direction", (int)direction);
         anim.SetBool("Move", true);
 
-        while (Time.time < startTime + time)
+        while (Time.time < startTime + time && !hitWall)
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition, (Time.time - startTime) / time);
             yield return null;
         }
 
+        hitWall = false;
+
         anim.SetBool("Move", false);
+        anim.speed = 1f;
         nextAttackTime = cooldown;
         acting = false;
     }
@@ -191,7 +235,10 @@ public class Cerberus : MonoBehaviour {
     private void Rush()
     {
         anim.ResetTrigger("Jump");
-        Move(runSpeed, runTime, runCooldown);
+        
+        Vector3 playerDirection = CheckPlayerDirection();
+        anim.speed = 2f;
+        StartCoroutine(MoveCoroutine(playerDirection, runSpeed, runTime, runCooldown));
     }
 
     private IEnumerator Act()

@@ -150,14 +150,14 @@ MonoBehaviour:
   walkSpeed: 5
   walkTime: 1
   walkCooldown: 0.5
-  runSpeed: 7
+  runSpeed: 30
   runTime: 3
   runCooldown: 1
   touchCooldown: 0.5
   touchDamage: 20
   fireballPrefab: {fileID: 4083885750852583768, guid: 36c60b92d8813e34c87e38eee0d811b3, type: 3}
   fireballDamage: 40
-  fireballSpeed: 10
+  fireballSpeed: 13
   fireballCooldown: 1
 --- !u!95 &6496728683741739509
 Animator:
