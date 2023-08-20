@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     protected GameObject player;
     public float speed = 1f;
+    public static float maxHealth = 1f;
     public float health = 1f;
     public float damage = 30f;
     public float range = .5f;
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
     protected void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        health = maxHealth;
     }
 
     protected void Update()

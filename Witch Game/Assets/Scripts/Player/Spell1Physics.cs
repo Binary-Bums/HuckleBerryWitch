@@ -54,5 +54,12 @@ public class Spell1Physics : MonoBehaviour
             Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
             enemyScript.TakeDamage(damage);
         }
+
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            Boss bossScript = other.gameObject.GetComponent<Boss>();
+            bossScript.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }
