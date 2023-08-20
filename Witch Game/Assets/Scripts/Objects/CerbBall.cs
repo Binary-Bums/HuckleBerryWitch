@@ -19,7 +19,7 @@ public class CerbBall : MonoBehaviour {
         if (other.gameObject.CompareTag("playerBody"))
         {
             // get the player's script component and call TakeDamage
-            other.gameObject.GetComponentInParent<PlayerInfo>().TakeDamage(damage);;
+            other.gameObject.GetComponentInParent<PlayerInfo>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

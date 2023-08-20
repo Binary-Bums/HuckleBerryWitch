@@ -11,6 +11,8 @@ TagManager:
   - playerBody
   - Canvas
   - Crafting
+  - Wall
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Combat
-  - 
+  - Walls
   - 
   - 
   - 

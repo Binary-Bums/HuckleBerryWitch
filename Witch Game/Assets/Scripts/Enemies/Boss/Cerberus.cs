@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cerberus : MonoBehaviour {
-    public static float maxHealth = 100f;
+public class Cerberus : Boss {
+    public static float maxHealth = 1000f;
     private float health;
     public float walkSpeed = 5f;
     public float walkTime = 1f;
@@ -13,11 +13,12 @@ public class Cerberus : MonoBehaviour {
     public float runCooldown = 1f;
 
     public float touchCooldown = .5f;
-    public int touchDamage = 20;
+    public int touchDamage = 50;
     [SerializeField] private GameObject fireballPrefab;
-    public int fireballDamage = 40;
+    public int fireballDamage = 30;
     public float fireballSpeed = 10f;
     public float fireballCooldown = 1f; // Cooldown time in seconds
+    public float fireballSpread = 30f;
     private float nextAttackTime; // When the next attack can happen
 
     private bool acting = false;
@@ -50,9 +51,16 @@ public class Cerberus : MonoBehaviour {
 
     }
 
-    private void Update() {
+    public override void TakeDamage(float damage)
+    {
+        health -= damage;
 
-        
+        if (health <= 0) Die();
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -224,12 +232,29 @@ public class Cerberus : MonoBehaviour {
 
     private void Fire()
     {
-        Vector3 shootDirection = (player.transform.position - transform.position).normalized;
-        GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-        fireball.GetComponent<CerbBall>().Initialize(fireballDamage, fireballSpeed, shootDirection);
+        MakeFireballs();
         nextAttackTime = fireballCooldown; // Reset the attack timer
         anim.SetBool("Fire", false);
         acting = false;
+    }
+
+    private void MakeFireballs()
+    {
+        Vector3 shootDirection = (player.transform.position - transform.position).normalized;
+
+        // Create the central fireball
+        GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+        fireball.GetComponent<CerbBall>().Initialize(fireballDamage, fireballSpeed, shootDirection);
+
+        // Create the left fireball
+        Vector3 leftDirection = Quaternion.Euler(0, 0, fireballSpread) * shootDirection; // Rotate shootDirection by 30 degrees to the left
+        GameObject leftFireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+        leftFireball.GetComponent<CerbBall>().Initialize(fireballDamage, fireballSpeed, leftDirection);
+
+        // Create the right fireball
+        Vector3 rightDirection = Quaternion.Euler(0, 0, -fireballSpread) * shootDirection; // Rotate shootDirection by 30 degrees to the right
+        GameObject rightFireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+        rightFireball.GetComponent<CerbBall>().Initialize(fireballDamage, fireballSpeed, rightDirection);
     }
 
     private void Rush()
