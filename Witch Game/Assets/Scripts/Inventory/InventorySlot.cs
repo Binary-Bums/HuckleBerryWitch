@@ -1,15 +1,17 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventorySlot : Slot
 {
     public InventoryItem inventoryItem;
+    
 
     public GameObject itemIcon;
     public GameObject deleteIcon;
     private Image imageComponent;
     private PlayerInventory playerInventory;
-    private bool isDragging;
+    private int slotIndex;
 
     public void Start()
     {
@@ -17,15 +19,7 @@ public class InventorySlot : Slot
         if (deleteIcon != null) deleteIcon.SetActive(false);
         imageComponent = itemIcon.GetComponent<Image>();
         imageComponent.color = Color.clear;
-    }
-
-    private void Update() {
-        if (isDragging)
-        {
-            Vector2 mousePos;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(itemIcon.transform.parent.GetComponent<RectTransform>(), Input.mousePosition, null, out mousePos);
-            itemIcon.GetComponent<RectTransform>().anchoredPosition = mousePos;
-        }
+        slotIndex = transform.GetSiblingIndex();
     }
 
     public void Initialize(InventoryItem inventoryItem)
@@ -46,27 +40,28 @@ public class InventorySlot : Slot
 
     public void Delete()
     {
-        int i = transform.GetSiblingIndex();
-        playerInventory.RemoveFromInventory(i);
+        playerInventory.RemoveFromInventory(slotIndex);
+        Reset();
+    }
+
+    public void Moved()
+    {
+        Delete();
     }
 
     public void OnClick()
     {
-        Debug.Log("clicekd ");
-
-        if (inventoryItem != null)
+        if (inventoryItem != null && ClickedItem.Instance.GetSelectedItem() == null)
         {
-            Debug.Log("on item");
             ClickedItem.Instance.SelectItem(this);
-            isDragging = true;
+            Reset();
         }
-        else if (ClickedItem.Instance.selectedItem != null)
-        {
-
-
-            playerInventory.AddToInventory(ClickedItem.Instance.selectedItem);
-            ClickedItem.Instance.Placed();
-            isDragging = false;
+        else if (ClickedItem.Instance.GetSelectedItem() != null && inventoryItem == null)
+        {   
+            playerInventory.AddToInventory(ClickedItem.Instance.GetSelectedItem(), slotIndex);
+            ClickedItem.Instance.Placed(this);
         }
     }
+
+    
 }

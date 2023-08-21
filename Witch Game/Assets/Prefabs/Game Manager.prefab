@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3be929955626e447a663c76ab0bd3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragSprite: {fileID: 2461203365372111506, guid: a27c2bef1bcb726429499dca75f498a3, type: 3}
   selectedItem: {fileID: 0}
+  draggingItem: {fileID: 0}
   lastClickedSlot: {fileID: 0}

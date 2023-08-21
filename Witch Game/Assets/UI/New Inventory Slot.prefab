@@ -395,5 +395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItem: {fileID: 0}
+  dragSprite: {fileID: 2461203365372111506, guid: a27c2bef1bcb726429499dca75f498a3, type: 3}
   itemIcon: {fileID: 2990432564456325401}
   deleteIcon: {fileID: 2501967107465807616}
