@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spell2Physics : MonoBehaviour
+{
+    // Start is called before the first frame update
+    private GameObject player;
+    private Vector2 move = new Vector2(0, 0);
+    public float distanceFromPlayer = 5f;
+    public float damage = 10f;
+    public float despawnTime = 15; // Time in seconds before the projectile despawns
+
+    private float startTime; // The time when the projectile was spawned
+    
+    public void Spawn()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        PlayerInfo playerScript = player.gameObject.GetComponent<PlayerInfo>();
+        PlayerInfo.Direction direction = playerScript.direction;
+
+        if (direction == PlayerInfo.Direction.Up)
+        {
+            move = new Vector2(0, distanceFromPlayer);
+        }
+        else if (direction == PlayerInfo.Direction.Down)
+        {
+            move = new Vector2(0, -distanceFromPlayer);
+        }
+        else if (direction == PlayerInfo.Direction.Left)
+        {
+            move = new Vector2(-distanceFromPlayer, 0);
+        }
+        else if (direction == PlayerInfo.Direction.Right)
+        {
+            move = new Vector2(distanceFromPlayer, 0);
+        }
+
+        // Set the start time of the projectile
+        startTime = Time.time;
+
+        // Knowing where the player is
+        transform.position = move * player.transform.position;
+
+        // Schedule the despawn of the projectile
+        Destroy(gameObject, despawnTime);
+
+    } // THIS IS THE THING THAT MAKES THE SPELL HURT THINGS
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // check if the enemy collided with the player
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            // get the player's script component and call TakeDamage
+            Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
+            enemyScript.TakeDamage(damage);
+        }
+    }
+}

@@ -18,7 +18,7 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     private HealthBar healthBar;
     private float currentHealth;  // player's health
-
+    private bool isShieldActive = false; // Add this variable
 
     private void Start()
     {
@@ -53,13 +53,28 @@ public class PlayerInfo : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth/maxHealth);
-
-        if (currentHealth <= 0)
+        if (!isShieldActive) // Check if the shield is not active
         {
-            Destroy(gameObject);
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth/maxHealth);
+
+            if (currentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
+    }   
+
+    // Method to set the shield's active status
+    public void SetShieldActive(bool active)
+    {
+        isShieldActive = active;
+    }
+
+    // Method to check if the shield is active
+    public bool IsShieldActive()
+    {
+        return isShieldActive;
     }
 
     public void Heal(float heal)
