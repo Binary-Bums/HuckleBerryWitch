@@ -10,37 +10,27 @@ public class PlayerInventory : MonoBehaviour
 
     private List<InventorySlot> inventory = new List<InventorySlot>();
 
-    public void AddToInventory(Pickup e)
+    public void PickUp(Pickup item)
     {
-        if (inventory.Count < maxItems)
+        if (inventory.Count < maxItems && GetEmptySlot() != -1)
         {
-            // GameObject slotObject = Instantiate(slotPrefab, transform);
-            // InventorySlot slot = slotObject.GetComponent<InventorySlot>();
+            inventoryUI.transform.GetChild(GetEmptySlot()).GetComponent<InventorySlot>().Initialize(item.inventoryItem);
+            item.PickedUp();
+        }
+        
+    }
 
-            // slot.Initialize(e.inventoryItem);
-
-            // inventory.Add(slot);
-
-            e.PickedUp();
+    public void AddToInventory(InventoryItem item)
+    {
+        if (inventory.Count < maxItems && GetEmptySlot() != -1)
+        {
+            inventoryUI.transform.GetChild(GetEmptySlot()).GetComponent<InventorySlot>().Initialize(item);
         }
     }
 
-    public void AddToInventory(InventoryItem e)
+    public void AddToInventory(InventoryItem item, int slot)
     {
-        if (inventory.Count < maxItems)
-        {
-            // GameObject slotObject = Instantiate(slotPrefab, transform);
-            // InventorySlot slot = slotObject.GetComponent<InventorySlot>();
-
-            // slot.Initialize(e);
-
-            // inventory.Add(slot);
-
-            if (isEmptySlot() != -1)
-            {
-                inventoryUI.transform.GetChild(isEmptySlot()).GetComponent<InventorySlot>().Initialize(e);
-            }
-        }
+        inventoryUI.transform.GetChild(slot).GetComponent<InventorySlot>().Initialize(item);
     }
 
     public void RemoveFromInventory(int i)
@@ -48,7 +38,7 @@ public class PlayerInventory : MonoBehaviour
         inventoryUI.transform.GetChild(i).GetComponent<InventorySlot>().Reset();
     }
 
-    public int isEmptySlot()
+    public int GetEmptySlot()
     {
 
         int emptySlot = -1;
@@ -61,7 +51,6 @@ public class PlayerInventory : MonoBehaviour
                 break;
             }
         }
-        Debug.Log(emptySlot);
         return emptySlot;
 
     }

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: equippable
       value: 
       objectReference: {fileID: 11400000, guid: b6d8c83eb479dd947abdd0126c746fd2, type: 2}
+    - target: {fileID: -1587629372131537157, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: inventoryItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 5781cc53af457cc4092e7b56c024e3d0, type: 2}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -69,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.32
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.32
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
