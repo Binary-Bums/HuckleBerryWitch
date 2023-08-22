@@ -4,51 +4,43 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public int maxItems = 20;
-    [SerializeField] private GameObject inventoryUI;
-
-
+    private GameObject inventoryUI;
 
     private List<InventorySlot> inventory = new List<InventorySlot>();
 
-    public void AddToInventory(Pickup e)
+    private void Start() {
+        inventoryUI = GameObject.FindGameObjectWithTag("Inventory");
+    }
+
+    public void PickUp(Pickup item)
     {
-        if (inventory.Count < maxItems)
+        if (inventory.Count < maxItems && GetEmptySlot() != -1)
         {
-            // GameObject slotObject = Instantiate(slotPrefab, transform);
-            // InventorySlot slot = slotObject.GetComponent<InventorySlot>();
+            inventoryUI.transform.GetChild(GetEmptySlot()).GetComponent<InventorySlot>().Initialize(item.inventoryItem);
+            item.PickedUp();
+        }
+        
+    }
 
-            // slot.Initialize(e.inventoryItem);
-
-            // inventory.Add(slot);
-
-            e.PickedUp();
+    public void AddToInventory(InventoryItem item)
+    {
+        if (inventory.Count < maxItems && GetEmptySlot() != -1)
+        {
+            inventoryUI.transform.GetChild(GetEmptySlot()).GetComponent<InventorySlot>().Initialize(item);
         }
     }
 
-    public void AddToInventory(InventoryItem e)
+    public void AddToInventory(InventoryItem item, int slot)
     {
-        if (inventory.Count < maxItems)
-        {
-            // GameObject slotObject = Instantiate(slotPrefab, transform);
-            // InventorySlot slot = slotObject.GetComponent<InventorySlot>();
-
-            // slot.Initialize(e);
-
-            // inventory.Add(slot);
-
-            if (isEmptySlot() != -1)
-            {
-                inventoryUI.transform.GetChild(isEmptySlot()).GetComponent<InventorySlot>().Initialize(e);
-            }
-        }
+        inventoryUI.transform.GetChild(slot).GetComponent<InventorySlot>().Initialize(item);
     }
 
     public void RemoveFromInventory(int i)
     {
-        inventoryUI.transform.GetChild(i).GetComponent<InventorySlot>().Reset();
+        inventoryUI.transform.GetChild(i).GetComponent<InventorySlot>().Clear();
     }
 
-    public int isEmptySlot()
+    public int GetEmptySlot()
     {
 
         int emptySlot = -1;
@@ -61,7 +53,6 @@ public class PlayerInventory : MonoBehaviour
                 break;
             }
         }
-        Debug.Log(emptySlot);
         return emptySlot;
 
     }
