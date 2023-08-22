@@ -35,7 +35,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveFromInventory(int i)
     {
-        inventoryUI.transform.GetChild(i).GetComponent<InventorySlot>().Reset();
+        inventoryUI.transform.GetChild(i).GetComponent<InventorySlot>().Clear();
     }
 
     public int GetEmptySlot()

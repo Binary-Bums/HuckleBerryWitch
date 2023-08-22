@@ -5,9 +5,10 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour {
     public InventoryItem inventoryItem;
     
-
     public GameObject itemIcon;
     protected Image imageComponent;
+
+    protected bool clicked = false;
 
     protected virtual void Start()
     {
@@ -15,18 +16,27 @@ public class Slot : MonoBehaviour {
         imageComponent.color = Color.clear;
     }
 
-    public virtual void Initialize(InventoryItem inventoryItem)
+    public virtual void Initialize(InventoryItem item)
     {
-        this.inventoryItem = inventoryItem;
-        imageComponent.sprite = inventoryItem.sprite;
+        inventoryItem = item;
+        imageComponent.sprite = item.sprite;
         imageComponent.color = Color.white;
+        clicked = false;
     }
 
-    public virtual void Reset()
+    public virtual void Clear()
     {
         inventoryItem = null;
         imageComponent.sprite = null;
         imageComponent.color = Color.clear;
+        clicked = false;
+    }
+
+    protected virtual void Invisible()
+    {
+        imageComponent.sprite = null;
+        imageComponent.color = Color.clear;
+        clicked = true;
     }
 
     public virtual void OnClick()
@@ -37,12 +47,14 @@ public class Slot : MonoBehaviour {
         {
             if (item == null)
             {
-                ClickWithoutItem();
+                ClickWithoutItemOnItem();
                 
-            } else {
+            } else if (!clicked){
 
                 ClickWithItemOnItem(item);
                 
+            } else {
+                ClickWithItemOnEmpty(item);
             }
         }
         else if (item != null)
@@ -52,22 +64,22 @@ public class Slot : MonoBehaviour {
         }
     }
 
-    protected virtual void ClickWithoutItem()
+    protected virtual void ClickWithoutItemOnItem()
     {
         ClickedItem.Instance.SelectItem(this);
-        Reset();
+        Invisible();
     }
 
     protected virtual void ClickWithItemOnItem(InventoryItem item)
     {
-        ClickedItem.Instance.Placed();
-        ClickedItem.Instance.SelectItem(this);
+        ClickedItem.Instance.Swap(inventoryItem);
+
         Initialize(item);
     }
 
     protected virtual void ClickWithItemOnEmpty(InventoryItem item)
     {
         Initialize(item);
-        ClickedItem.Instance.Placed();
+        ClickedItem.Instance.Placed(this);
     }
 }

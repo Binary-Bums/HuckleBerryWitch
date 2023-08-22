@@ -37,32 +37,47 @@ public class ClickedItem : MonoBehaviour
         CreateDraggedItem();
     }
 
-    public void Reset()
-    {
-        lastClickedSlot.Initialize(selectedItem);
-        DestroyDraggedItem();
-        selectedItem = null;
-    }
-
-    public void Placed()
+    public void Placed(Slot slot)
     {
         selectedItem = null;
+        if (slot != lastClickedSlot) lastClickedSlot.Clear();
             
         DestroyDraggedItem();
+    }
+
+    public void Swap(InventoryItem item)
+    {
+        selectedItem = item;
+            
+        DestroyDraggedItem();
+
+        
+        CreateDraggedItem();
+    }
+
+    public void Reset()
+    {
+        if (dragging != null)
+        {
+            lastClickedSlot.Initialize(selectedItem);
+            DestroyDraggedItem();
+        }
+        
+        selectedItem = null;
+        lastClickedSlot = null;
     }
 
     private void CreateDraggedItem()
     {
         draggingItem = Instantiate(dragSprite, transform);
         draggingItem.GetComponent<Image>().sprite = selectedItem.sprite;
-        // draggingItem.transform.SetAsLastSibling();
         dragging = StartCoroutine(Dragging());
     }
 
     private void DestroyDraggedItem()
     {
 
-        if (dragging != null) StopCoroutine(dragging);
+        if (dragging != null) {StopCoroutine(dragging); dragging = null; };
 
         if (draggingItem != null) Destroy(draggingItem);
             
@@ -72,12 +87,11 @@ public class ClickedItem : MonoBehaviour
     {
         RectTransform item = draggingItem.GetComponent<RectTransform>();
         RectTransform parent = item.transform.parent.GetComponent<RectTransform>();
-        Camera uiCamera = null; // If you have a separate camera rendering the UI, assign it here.
 
         while (true)
         {
             Vector2 mousePos;
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(parent, Input.mousePosition, uiCamera, out mousePos))
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(parent, Input.mousePosition, null, out mousePos))
             {
                 item.anchoredPosition = mousePos;
             }

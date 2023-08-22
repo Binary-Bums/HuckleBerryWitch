@@ -16,14 +16,15 @@ public class InventorySlot : Slot
         deleteIcon.SetActive(true);
     }
 
-    public override void Reset()
+    public override void Clear()
     {
-        base.Reset();
+        base.Clear();
         deleteIcon.SetActive(false);
     }
 
-    private void Delete()
+    protected override void Invisible()
     {
-        Reset();
+        base.Invisible();
+        deleteIcon.SetActive(false);
     }
 }

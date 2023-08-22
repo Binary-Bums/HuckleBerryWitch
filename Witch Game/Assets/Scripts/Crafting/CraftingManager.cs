@@ -30,12 +30,11 @@ public class CraftingManager : MonoBehaviour {
         }
 
         gameObject.SetActive(false);
-        readyForEnable = true;
+        SetBlanks();
     }
 
     private void OnEnable() {
         Time.timeScale = 0;
-        if (readyForEnable) SetBlanks();
     }
 
     private void OnDisable() {
@@ -46,16 +45,18 @@ public class CraftingManager : MonoBehaviour {
     {
         foreach (CraftingItemSlot slot in itemSlots)
         {
-            slot.Reset();
+            slot.Clear();
         }
 
-        potionSlot.Reset();
+        potionSlot.Clear();
     }
 
     private void Craft()
     {
         for(int i = 0; i < itemSlots.Length; i++)
         {
+            if (itemSlots[i].inventoryItem == null) return;
+
             items[i] = InventoryItemList.GetInstance().GetItem(itemSlots[i].inventoryItem.id);
         }
         activeRecipe = RecipeList.GetInstance().GetRecipe(items);
@@ -67,18 +68,20 @@ public class CraftingManager : MonoBehaviour {
 
             foreach (CraftingItemSlot slot in itemSlots)
             {
-                slot.Reset();
+                slot.Clear();
             }
         }
     }
 
     private void ToggleCraftingUI()
     {
+        if (gameObject.activeSelf) ClickedItem.Instance.Reset();
         gameObject.SetActive(!gameObject.activeSelf);
     }
 
     private void Back()
     {
+        ClickedItem.Instance.Reset();
         gameObject.SetActive(false);
     }
 }
