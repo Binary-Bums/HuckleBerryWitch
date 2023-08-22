@@ -4,11 +4,13 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public int maxItems = 20;
-    [SerializeField] private GameObject inventoryUI;
-
-
+    private GameObject inventoryUI;
 
     private List<InventorySlot> inventory = new List<InventorySlot>();
+
+    private void Start() {
+        inventoryUI = GameObject.FindGameObjectWithTag("Inventory");
+    }
 
     public void PickUp(Pickup item)
     {

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour {
-    private PlayerInventory playerInventory;
     [SerializeField] private Button craftButton, backButton;
     [SerializeField] private GameObject itemContainer;
     [SerializeField] private CraftingPotionSlot potionSlot;
@@ -14,8 +13,6 @@ public class CraftingManager : MonoBehaviour {
     private CraftingItemSlot[] itemSlots = new CraftingItemSlot[4];
     private Recipe activeRecipe;
 
-    private bool readyForEnable = false;
-
     private void Awake() {
         craftButton.onClick.AddListener(Craft);
         backButton.onClick.AddListener(Back);
@@ -23,7 +20,6 @@ public class CraftingManager : MonoBehaviour {
     }
 
     private void Start() {
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         for (int i = 0; i < itemContainer.transform.childCount; i++)
         {
             itemSlots[i] = itemContainer.transform.GetChild(i).GetComponent<CraftingItemSlot>();
