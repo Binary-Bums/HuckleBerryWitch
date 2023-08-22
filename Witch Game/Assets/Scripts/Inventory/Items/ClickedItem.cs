@@ -10,7 +10,7 @@ public class ClickedItem : MonoBehaviour
     private InventoryItem selectedItem;
     private GameObject draggingItem;
     public bool IsDragging => selectedItem != null;
-    private InventorySlot lastClickedSlot;
+    private Slot lastClickedSlot;
     private Coroutine dragging;
 
     private void Awake()
@@ -31,7 +31,7 @@ public class ClickedItem : MonoBehaviour
         return selectedItem;
     }
 
-    public void SelectItem(InventorySlot slot)
+    public void SelectItem(Slot slot)
     {
         lastClickedSlot = slot;
         selectedItem = slot.inventoryItem;
@@ -45,10 +45,10 @@ public class ClickedItem : MonoBehaviour
         selectedItem = null;
     }
 
-    public void Placed(InventorySlot slot)
+    public void Placed(Slot slot)
     {
         selectedItem = null;
-        if (lastClickedSlot != slot) lastClickedSlot.Moved();
+        // if (lastClickedSlot != slot) lastClickedSlot.Moved();
             
         DestroyDraggedItem();
     }

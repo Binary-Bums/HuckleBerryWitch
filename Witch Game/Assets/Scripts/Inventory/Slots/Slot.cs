@@ -2,20 +2,17 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : Slot
-{
+public class Slot : MonoBehaviour {
     public InventoryItem inventoryItem;
     
 
     public GameObject itemIcon;
     public GameObject deleteIcon;
     private Image imageComponent;
-    private PlayerInventory playerInventory;
     private int slotIndex;
 
-    public void Start()
+    protected void Start()
     {
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         if (deleteIcon != null) deleteIcon.SetActive(false);
         imageComponent = itemIcon.GetComponent<Image>();
         imageComponent.color = Color.clear;
@@ -38,30 +35,39 @@ public class InventorySlot : Slot
         if (deleteIcon != null) deleteIcon.SetActive(false);
     }
 
-    public void Delete()
+    private void Delete()
     {
-        playerInventory.RemoveFromInventory(slotIndex);
         Reset();
     }
 
-    public void Moved()
+    public virtual void Moved()
     {
         Delete();
     }
 
-    public void OnClick()
+    public virtual void OnClick()
     {
-        if (inventoryItem != null && ClickedItem.Instance.GetSelectedItem() == null)
+        InventoryItem item = ClickedItem.Instance.GetSelectedItem();
+
+        if (inventoryItem != null)
         {
-            ClickedItem.Instance.SelectItem(this);
-            Reset();
+            if (ClickedItem.Instance.GetSelectedItem() == null)
+            {
+                ClickedItem.Instance.SelectItem(this);
+                Reset();
+                
+            } else {
+
+                ClickedItem.Instance.Placed(this);
+                ClickedItem.Instance.SelectItem(this);
+                Initialize(item);
+                
+            }
         }
         else if (ClickedItem.Instance.GetSelectedItem() != null && inventoryItem == null)
         {   
-            playerInventory.AddToInventory(ClickedItem.Instance.GetSelectedItem(), slotIndex);
             ClickedItem.Instance.Placed(this);
+            Initialize(item);
         }
     }
-
-    
 }
