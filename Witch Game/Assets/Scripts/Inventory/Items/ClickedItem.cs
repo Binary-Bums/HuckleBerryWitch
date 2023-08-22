@@ -53,26 +53,9 @@ public class ClickedItem : MonoBehaviour
 
     private void CreateDraggedItem()
     {
-        if (dragSprite == null)
-        {
-            Debug.LogError("dragSprite is not assigned!");
-            return;
-        }
-
-        if (lastClickedSlot == null)
-        {
-            Debug.LogError("lastClickedSlot is not assigned!");
-            return;
-        }
-
-        if (lastClickedSlot.transform.parent == null)
-        {
-            Debug.LogError("lastClickedSlot's parent is not assigned!");
-            return;
-        }
-
-        draggingItem = Instantiate(dragSprite, lastClickedSlot.transform);
+        draggingItem = Instantiate(dragSprite, transform);
         draggingItem.GetComponent<Image>().sprite = selectedItem.sprite;
+        // draggingItem.transform.SetAsLastSibling();
         dragging = StartCoroutine(Dragging());
     }
 
