@@ -9,7 +9,6 @@ public class ClickedItem : MonoBehaviour
     public GameObject dragSprite;
     private InventoryItem selectedItem;
     private GameObject draggingItem;
-    public bool IsDragging => selectedItem != null;
     private Slot lastClickedSlot;
     private Coroutine dragging;
 
@@ -45,17 +44,34 @@ public class ClickedItem : MonoBehaviour
         selectedItem = null;
     }
 
-    public void Placed(Slot slot)
+    public void Placed()
     {
         selectedItem = null;
-        // if (lastClickedSlot != slot) lastClickedSlot.Moved();
             
         DestroyDraggedItem();
     }
 
     private void CreateDraggedItem()
     {
-        draggingItem = Instantiate(dragSprite, lastClickedSlot.transform.parent);
+        if (dragSprite == null)
+        {
+            Debug.LogError("dragSprite is not assigned!");
+            return;
+        }
+
+        if (lastClickedSlot == null)
+        {
+            Debug.LogError("lastClickedSlot is not assigned!");
+            return;
+        }
+
+        if (lastClickedSlot.transform.parent == null)
+        {
+            Debug.LogError("lastClickedSlot's parent is not assigned!");
+            return;
+        }
+
+        draggingItem = Instantiate(dragSprite, lastClickedSlot.transform);
         draggingItem.GetComponent<Image>().sprite = selectedItem.sprite;
         dragging = StartCoroutine(Dragging());
     }

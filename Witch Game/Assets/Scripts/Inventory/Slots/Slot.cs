@@ -7,42 +7,26 @@ public class Slot : MonoBehaviour {
     
 
     public GameObject itemIcon;
-    public GameObject deleteIcon;
-    private Image imageComponent;
-    private int slotIndex;
+    protected Image imageComponent;
 
-    protected void Start()
+    protected virtual void Start()
     {
-        if (deleteIcon != null) deleteIcon.SetActive(false);
         imageComponent = itemIcon.GetComponent<Image>();
         imageComponent.color = Color.clear;
-        slotIndex = transform.GetSiblingIndex();
     }
 
-    public void Initialize(InventoryItem inventoryItem)
+    public virtual void Initialize(InventoryItem inventoryItem)
     {
         this.inventoryItem = inventoryItem;
         imageComponent.sprite = inventoryItem.sprite;
         imageComponent.color = Color.white;
-        if (deleteIcon != null) deleteIcon.SetActive(true);
     }
 
-    public void Reset()
+    public virtual void Reset()
     {
         inventoryItem = null;
         imageComponent.sprite = null;
         imageComponent.color = Color.clear;
-        if (deleteIcon != null) deleteIcon.SetActive(false);
-    }
-
-    private void Delete()
-    {
-        Reset();
-    }
-
-    public virtual void Moved()
-    {
-        Delete();
     }
 
     public virtual void OnClick()
@@ -51,23 +35,39 @@ public class Slot : MonoBehaviour {
 
         if (inventoryItem != null)
         {
-            if (ClickedItem.Instance.GetSelectedItem() == null)
+            if (item == null)
             {
-                ClickedItem.Instance.SelectItem(this);
-                Reset();
+                ClickWithoutItem();
                 
             } else {
 
-                ClickedItem.Instance.Placed(this);
-                ClickedItem.Instance.SelectItem(this);
-                Initialize(item);
+                ClickWithItemOnItem(item);
                 
             }
         }
-        else if (ClickedItem.Instance.GetSelectedItem() != null && inventoryItem == null)
+        else if (item != null)
         {   
-            ClickedItem.Instance.Placed(this);
-            Initialize(item);
+            
+            ClickWithItemOnEmpty(item);
         }
+    }
+
+    protected virtual void ClickWithoutItem()
+    {
+        ClickedItem.Instance.SelectItem(this);
+        Reset();
+    }
+
+    protected virtual void ClickWithItemOnItem(InventoryItem item)
+    {
+        ClickedItem.Instance.Placed();
+        ClickedItem.Instance.SelectItem(this);
+        Initialize(item);
+    }
+
+    protected virtual void ClickWithItemOnEmpty(InventoryItem item)
+    {
+        Initialize(item);
+        ClickedItem.Instance.Placed();
     }
 }

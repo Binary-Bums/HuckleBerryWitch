@@ -1,10 +1,29 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InventorySlot : Slot
 {
-    
+    public GameObject deleteIcon;
 
-    
+    protected override void Start()
+    {
+        base.Start();
+        deleteIcon.SetActive(false);
+    }
+
+    public override void Initialize(InventoryItem inventoryItem)
+    {
+        base.Initialize(inventoryItem);
+        deleteIcon.SetActive(true);
+    }
+
+    public override void Reset()
+    {
+        base.Reset();
+        deleteIcon.SetActive(false);
+    }
+
+    private void Delete()
+    {
+        Reset();
+    }
 }
