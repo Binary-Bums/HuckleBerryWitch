@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject spell1;
+    private PlayerInfo playerInfo;
+
+    [SerializeField] private List<GameObject> spells;
+    private int activeSpell = 0;
     [SerializeField] private float damageAmount = 30f;
     [SerializeField] private float attackRadius = 1.5f;
     [SerializeField] public float attackCooldown = 1f;
-    [SerializeField] private bool canAttack = true;
+    private bool canAttack = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private void Start() {
+        playerInfo = GetComponent<PlayerInfo>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -52,6 +53,17 @@ public class PlayerAttack : MonoBehaviour
         Invoke(nameof(ResetAttack), attackCooldown);
     }
 
+    private void UseSpell()
+    {
+        // Check if the player can attack
+        if (!canAttack)
+            return;
+
+        GameObject spell = Instantiate(spells[activeSpell], transform.position, Quaternion.identity);
+        spell.GetComponent<Spell>().Spawn(playerInfo);
+        Invoke(nameof(ResetAttack), attackCooldown);
+    }
+
     private void ResetAttack()
     {
         canAttack = true;
@@ -61,12 +73,16 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            GameObject spell = Instantiate(spell1, transform.position, Quaternion.identity);
-            spell.GetComponent<Spell1Physics>().Spawn();
+            UseSpell();
         }
         if(Input.GetKeyDown(KeyCode.Q))
         {
             MeleeAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            activeSpell++;
+            if (activeSpell >= spells.Count) activeSpell = 0;
         }
     }
 }
