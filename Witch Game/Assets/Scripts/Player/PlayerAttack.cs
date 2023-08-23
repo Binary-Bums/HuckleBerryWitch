@@ -17,17 +17,6 @@ public class PlayerAttack : MonoBehaviour
         playerInfo = GetComponent<PlayerInfo>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // check if the enemy collided with the player
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            // get the player's script component and call TakeDamage
-            Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
-            enemyScript.TakeDamage(damageAmount);
-        }
-    }
-
     private void MeleeAttack()
     {
         // Check if the player can attack
@@ -61,6 +50,8 @@ public class PlayerAttack : MonoBehaviour
 
         GameObject spell = Instantiate(spells[activeSpell], transform.position, Quaternion.identity);
         spell.GetComponent<Spell>().Spawn(playerInfo);
+
+        canAttack = false;
         Invoke(nameof(ResetAttack), attackCooldown);
     }
 
@@ -81,8 +72,9 @@ public class PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            activeSpell++;
-            if (activeSpell >= spells.Count) activeSpell = 0;
+            if (activeSpell + 1 >= spells.Count) activeSpell = 0;
+
+            else activeSpell++;
         }
     }
 }

@@ -116,4 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   damage: 10
-  despawnTime: 15
+  despawnTime: 5

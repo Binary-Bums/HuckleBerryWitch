@@ -300,7 +300,7 @@ MonoBehaviour:
   - {fileID: 3792548723878627894, guid: ec4a83540d1a6411ab71ecaea2b0cc27, type: 3}
   damageAmount: 30
   attackRadius: 1
-  attackCooldown: 1
+  attackCooldown: 0.2
 --- !u!114 &2945564229793816500
 MonoBehaviour:
   m_ObjectHideFlags: 0
