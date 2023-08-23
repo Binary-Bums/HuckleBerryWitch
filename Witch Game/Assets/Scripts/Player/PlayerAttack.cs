@@ -8,13 +8,44 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private List<GameObject> spells;
     private int activeSpell = 0;
-    [SerializeField] private float damageAmount = 30f;
-    [SerializeField] private float attackRadius = 1.5f;
-    [SerializeField] public float attackCooldown = 1f;
+    public float damageAmount = 30f;
+    public float attackRadius = 1.5f;
+    public float attackCooldown = 1f;
     private bool canAttack = true;
 
     private void Start() {
         playerInfo = GetComponent<PlayerInfo>();
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            UseSpell();
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            MeleeAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (activeSpell + 1 >= spells.Count) activeSpell = 0;
+
+            else activeSpell++;
+        }
+    }
+
+    private void UseSpell()
+    {
+        // Check if the player can attack
+        if (!canAttack)
+            return;
+
+        GameObject spell = Instantiate(spells[activeSpell], transform.position, Quaternion.identity);
+        spell.GetComponent<Spell>().Spawn(playerInfo);
+
+        canAttack = false;
+        Invoke(nameof(ResetAttack), attackCooldown);
     }
 
     private void MeleeAttack()
@@ -42,39 +73,8 @@ public class PlayerAttack : MonoBehaviour
         Invoke(nameof(ResetAttack), attackCooldown);
     }
 
-    private void UseSpell()
-    {
-        // Check if the player can attack
-        if (!canAttack)
-            return;
-
-        GameObject spell = Instantiate(spells[activeSpell], transform.position, Quaternion.identity);
-        spell.GetComponent<Spell>().Spawn(playerInfo);
-
-        canAttack = false;
-        Invoke(nameof(ResetAttack), attackCooldown);
-    }
-
     private void ResetAttack()
     {
         canAttack = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            UseSpell();
-        }
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            MeleeAttack();
-        }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (activeSpell + 1 >= spells.Count) activeSpell = 0;
-
-            else activeSpell++;
-        }
     }
 }
