@@ -48,6 +48,15 @@ public class Spell : MonoBehaviour
             // get the player's script component and call TakeDamage
             Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
             enemyScript.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            // get the player's script component and call TakeDamage
+            Boss enemyScript = other.gameObject.GetComponent<Boss>();
+            enemyScript.TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }
