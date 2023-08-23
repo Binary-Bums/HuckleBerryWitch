@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: equippable
       value: 
       objectReference: {fileID: 11400000, guid: b6d8c83eb479dd947abdd0126c746fd2, type: 2}
+    - target: {fileID: -1587629372131537157, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: inventoryItem
+      value: 
+      objectReference: {fileID: 11400000, guid: b6d8c83eb479dd947abdd0126c746fd2, type: 2}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -59,9 +63,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4b1ce958a7b68b43814534898fa781c, type: 3}
     - target: {fileID: 2401812853056693574, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_Name
       value: Speed Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}

@@ -20,7 +20,9 @@ public class InventoryToggle : MonoBehaviour
         if(Input.GetKeyDown(inventoryKey))
         {
             isInventoryOpen = !isInventoryOpen;
+            if (!isInventoryOpen) ClickedItem.Instance.Reset();
             Inventory.SetActive(isInventoryOpen);
+            
         }
     }
 }

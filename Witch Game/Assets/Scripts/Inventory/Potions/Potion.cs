@@ -1,6 +1,6 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "Potion", menuName = "Equippable/Potion")]
-public class Potion : Equippable
+[CreateAssetMenu(fileName = "Potion", menuName = "InventoryItem/Potion")]
+public class Potion : InventoryItem
 {
     public Potion(string id, Sprite sprite) : base(id, sprite)
     {

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: equippable
       value: 
       objectReference: {fileID: 11400000, guid: 99708f3154cdb6545b93fcef036278cb, type: 2}
+    - target: {fileID: -1587629372131537157, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: inventoryItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 99708f3154cdb6545b93fcef036278cb, type: 2}
     - target: {fileID: 6035144470370460, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -59,9 +63,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1486621850664078901, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b609bc6134a99144994a0858ea4e53d, type: 3}
     - target: {fileID: 2401812853056693574, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
       propertyPath: m_Name
       value: Health Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118781363337248055, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cca2d961d4fb4242a8c17801b41126f, type: 3}

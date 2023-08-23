@@ -3,14 +3,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour {
-    private PlayerInventory playerInventory;
     [SerializeField] private Button craftButton, backButton;
-    [SerializeField] private GameObject slot, itemContainer;
+    [SerializeField] private GameObject itemContainer;
+    [SerializeField] private CraftingPotionSlot potionSlot;
     public int rows = 2;
     public int columns = 2;
 
     private Item[] items = new Item[4];
-    private GameObject[] slots = new GameObject[4];
+    private CraftingItemSlot[] itemSlots = new CraftingItemSlot[4];
+    private Recipe activeRecipe;
 
     private void Awake() {
         craftButton.onClick.AddListener(Craft);
@@ -19,85 +20,64 @@ public class CraftingManager : MonoBehaviour {
     }
 
     private void Start() {
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        for (int i = 0; i < itemContainer.transform.childCount; i++)
+        {
+            itemSlots[i] = itemContainer.transform.GetChild(i).GetComponent<CraftingItemSlot>();
+        }
+
         gameObject.SetActive(false);
+        SetBlanks();
     }
 
     private void OnEnable() {
         Time.timeScale = 0;
-        SetBlanks();
-        FillTable();
-        
     }
 
     private void OnDisable() {
         Time.timeScale = 1;
     }
 
-    private void FillTable()
-    {
-        int i = 0;
-
-        while (i < rows)
-        {
-            items[i] = EquippableList.GetInstance().GetItem("Red Paint");
-            slots[i].GetComponent<InventorySlot>().Initialize(items[i]);
-            i++;
-        }
-
-        while (i < rows + columns)
-        {
-            items[i] = EquippableList.GetInstance().GetItem("Glass Shard");
-            slots[i].GetComponent<InventorySlot>().Initialize(items[i]);
-            i++;
-        }
-    }
-
     private void SetBlanks()
     {
-        
-        for (int i = 0; i < itemContainer.transform.childCount; i++)
+        foreach (CraftingItemSlot slot in itemSlots)
         {
-            Destroy(itemContainer.transform.GetChild(i).gameObject);
-            items[i] = null;
+            slot.Clear();
         }
 
-        for (int i = 0; i < rows * columns; i++)
-        {
-            GameObject square = Instantiate(slot, itemContainer.transform);
-            slots[i] = square;
-        }
+        potionSlot.Clear();
     }
 
     private void Craft()
     {
-        Recipe recipe = RecipeList.GetInstance().GetRecipe(items);
-        
-        if (recipe != null)
+        for(int i = 0; i < itemSlots.Length; i++)
         {
-            
-            foreach (Item item in items) playerInventory.RemoveFromInventory(item);
+            if (itemSlots[i].inventoryItem == null) return;
 
-            playerInventory.AddToInventory(recipe.potion);
-
-            SetBlanks();
-
-            
+            items[i] = InventoryItemList.GetInstance().GetItem(itemSlots[i].inventoryItem.id);
         }
-    }
+        activeRecipe = RecipeList.GetInstance().GetRecipe(items);
+        
 
-    public void AddToTable(Equippable e)
-    {
+        if (activeRecipe != null)
+        {
+            potionSlot.Initialize(activeRecipe.potion);
 
+            foreach (CraftingItemSlot slot in itemSlots)
+            {
+                slot.Clear();
+            }
+        }
     }
 
     private void ToggleCraftingUI()
     {
+        if (gameObject.activeSelf) ClickedItem.Instance.Reset();
         gameObject.SetActive(!gameObject.activeSelf);
     }
 
     private void Back()
     {
+        ClickedItem.Instance.Reset();
         gameObject.SetActive(false);
     }
 }

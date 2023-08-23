@@ -11,6 +11,10 @@ TagManager:
   - playerBody
   - Canvas
   - Crafting
+  - Wall
+  - Boss
+  - Feline
+  - Inventory
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - Water
   - UI
   - Combat
-  - 
+  - Walls
   - 
   - 
   - 
