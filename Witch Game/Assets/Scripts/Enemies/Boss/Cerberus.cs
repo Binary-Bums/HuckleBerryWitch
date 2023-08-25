@@ -70,7 +70,7 @@ public class Cerberus : Boss {
         {
             // get the player's script component and call TakeDamage
             playerInfo.TakeDamage(touchDamage);
-        } else if (other.gameObject.CompareTag("Wall"))
+        } else if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             hitWall = true;
         }
@@ -172,7 +172,7 @@ public class Cerberus : Boss {
             }
 
             // Get the layer number for "Wall"
-            int layerNumber = LayerMask.NameToLayer("Walls");
+            int layerNumber = LayerMask.NameToLayer("Wall");
 
             // Create a layer mask that includes only the "Wall" layer
             int layerMask = 1 << layerNumber;
@@ -184,17 +184,12 @@ public class Cerberus : Boss {
             
             if (hit.collider != null)
             {
-                Debug.Log("Raycast hit: " + hit.collider.name);
+                // Remove the direction that led to a barrier
                 directions.RemoveAt(randomIndex);
-                // Barrier detected, don't move
-                
             }
             else
             {
-                // Remove the direction that led to a barrier
-                Debug.Log("Raycast missed.");
                 break;
-                
             }
         }
 

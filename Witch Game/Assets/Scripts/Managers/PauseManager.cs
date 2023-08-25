@@ -19,6 +19,7 @@ public class PauseManager : MonoBehaviour {
     private void Start() {
         playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         playerInputManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputManager>();
+        pauseUI.SetActive(false);
     }
 
     private void Update() {
