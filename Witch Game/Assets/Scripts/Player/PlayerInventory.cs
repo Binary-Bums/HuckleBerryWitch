@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour
 
     private List<InventorySlot> inventory = new List<InventorySlot>();
 
-    private void Start() {
+    private void Awake() {
         inventoryUI = GameObject.FindGameObjectWithTag("Inventory");
     }
 
