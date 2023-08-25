@@ -18906,7 +18906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 764851302647250511, guid: 048eb8a40ef1db347be25ed9364ac0f3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3242488
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 764851302647250511, guid: 048eb8a40ef1db347be25ed9364ac0f3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18939,6 +18939,10 @@ PrefabInstance:
     - target: {fileID: 7185210713308597982, guid: 048eb8a40ef1db347be25ed9364ac0f3, type: 3}
       propertyPath: m_Name
       value: Red Flower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981444020361471340, guid: 048eb8a40ef1db347be25ed9364ac0f3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 048eb8a40ef1db347be25ed9364ac0f3, type: 3}
