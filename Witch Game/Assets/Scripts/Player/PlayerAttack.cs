@@ -4,27 +4,48 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject spell1;
-    [SerializeField] private float damageAmount = 30f;
-    [SerializeField] private float attackRadius = 1.5f;
-    [SerializeField] public float attackCooldown = 1f;
-    [SerializeField] private bool canAttack = true;
+    private PlayerInfo playerInfo;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private List<GameObject> spells;
+    private int activeSpell = 0;
+    public float damageAmount = 30f;
+    public float attackRadius = 1.5f;
+    public float attackCooldown = 1f;
+    private bool canAttack = true;
+
+    private void Start() {
+        playerInfo = GetComponent<PlayerInfo>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    // Update is called once per frame
+    private void Update()
     {
-        // check if the enemy collided with the player
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            // get the player's script component and call TakeDamage
-            Enemy enemyScript = other.gameObject.GetComponent<Enemy>();
-            enemyScript.TakeDamage(damageAmount);
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            UseSpell();
         }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            MeleeAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (activeSpell + 1 >= spells.Count) activeSpell = 0;
+
+            else activeSpell++;
+        }
+    }
+
+    private void UseSpell()
+    {
+        // Check if the player can attack
+        if (!canAttack)
+            return;
+
+        GameObject spell = Instantiate(spells[activeSpell], transform.position, Quaternion.identity);
+        spell.GetComponent<Spell>().Spawn(playerInfo);
+
+        canAttack = false;
+        Invoke(nameof(ResetAttack), attackCooldown);
     }
 
     private void MeleeAttack()
@@ -55,18 +76,5 @@ public class PlayerAttack : MonoBehaviour
     private void ResetAttack()
     {
         canAttack = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            GameObject spell = Instantiate(spell1, transform.position, Quaternion.identity);
-            spell.GetComponent<Spell1Physics>().Spawn();
-        }
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            MeleeAttack();
-        }
     }
 }

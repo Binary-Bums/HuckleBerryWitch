@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInfo : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     private HealthBar healthBar;
     private float currentHealth;  // player's health
-
 
     private void Start()
     {
@@ -53,14 +53,16 @@ public class PlayerInfo : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth/maxHealth);
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
-    }
+        
+    }   
 
     public void Heal(float heal)
     {
@@ -70,5 +72,11 @@ public class PlayerInfo : MonoBehaviour
             currentHealth = maxHealth;
 
         healthBar.SetHealth(currentHealth/maxHealth);
+    }
+
+    private void Die()
+    {
+        int mainMenuSceneIndex = 0;
+        SceneManager.LoadScene(mainMenuSceneIndex);
     }
 }

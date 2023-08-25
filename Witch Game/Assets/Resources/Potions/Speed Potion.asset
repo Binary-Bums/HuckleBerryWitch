@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Speed Potion
   m_EditorClassIdentifier: 
   id: Speed Potion
-  sprite: {fileID: 21300000, guid: a36af60244ae7d141ab79ea60162cb1f, type: 3}
+  sprite: {fileID: 21300000, guid: f4b1ce958a7b68b43814534898fa781c, type: 3}

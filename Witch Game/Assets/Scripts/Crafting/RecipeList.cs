@@ -33,34 +33,34 @@ public class RecipeList{
         recipeList = new List<Recipe>()
         {
             HealthPotion(),
-            SpellPotion(),
             SpeedPotion(),
+            SpellPotion(),
         };
     }
 
     private Recipe HealthPotion()
     {
-        Item glass = EquippableList.GetInstance().GetItem("Glass Shard");
-        Item paint = EquippableList.GetInstance().GetItem("Red Paint");
+        Item glass = InventoryItemList.GetInstance().GetItem("Glass Shard");
+        Item paint = InventoryItemList.GetInstance().GetItem("Red Paint");
 
-        return FormRecipe(paint, paint, glass, glass, EquippableList.GetInstance().GetPotion("Health Potion"));
-    }
-
-    private Recipe SpellPotion()
-    {
-        Item glass = EquippableList.GetInstance().GetItem("Glass Shard");
-        Item paint = EquippableList.GetInstance().GetItem("Blue Paint");
-
-        return FormRecipe(paint, paint, glass, glass, EquippableList.GetInstance().GetPotion("Spell Potion"));
+        return FormRecipe(paint, paint, glass, glass, InventoryItemList.GetInstance().GetPotion("Health Potion"));
     }
 
     private Recipe SpeedPotion()
     {
-        Item glass = EquippableList.GetInstance().GetItem("Glass Shard");
-        Item redPaint = EquippableList.GetInstance().GetItem("Red Paint");
-        Item bluePaint = EquippableList.GetInstance().GetItem("Blue Paint");
+        Item glass = InventoryItemList.GetInstance().GetItem("Glass Shard");
+        Item paint = InventoryItemList.GetInstance().GetItem("Blue Paint");
 
-        return FormRecipe(redPaint, bluePaint, glass, glass, EquippableList.GetInstance().GetPotion("Speed Potion"));
+        return FormRecipe(paint, paint, glass, glass, InventoryItemList.GetInstance().GetPotion("Speed Potion"));
+    }
+
+    private Recipe SpellPotion()
+    {
+        Item glass = InventoryItemList.GetInstance().GetItem("Glass Shard");
+        Item redPaint = InventoryItemList.GetInstance().GetItem("Red Paint");
+        Item bluePaint = InventoryItemList.GetInstance().GetItem("Blue Paint");
+
+        return FormRecipe(redPaint, bluePaint, glass, glass, InventoryItemList.GetInstance().GetPotion("Spell Potion"));
     }
 
     private Recipe FormRecipe(Item i1, Item i2, Item i3, Item i4, Potion potion)
