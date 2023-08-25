@@ -11,7 +11,6 @@ TagManager:
   - playerBody
   - Canvas
   - Crafting
-  - Wall
   - Boss
   - Feline
   - Inventory
@@ -23,7 +22,7 @@ TagManager:
   - Water
   - UI
   - Combat
-  - Walls
+  - Wall
   - 
   - 
   - 
